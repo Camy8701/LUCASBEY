@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - LËTZ PHYSIO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <style>
+        .nav-pill { padding: 0.4rem 1rem; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.45); display: inline-flex; align-items: center; gap: 0.35rem; color: rgba(255,255,255,0.95); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.05em; transition: all 0.3s ease; text-decoration: none; }
+        .nav-pill-green:hover { background: #2f6b4b; border-color: #2f6b4b; color: #fff; box-shadow: 0 10px 20px rgba(47,107,75,0.25); transform: translateY(-1px); }
+        .nav-pill-beige:hover { background: #f2e6d0; border-color: #f2e6d0; color: #2f3a2f; box-shadow: 0 10px 20px rgba(242,230,208,0.35); transform: translateY(-1px); }
+        @keyframes heroReveal { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-title { animation: heroReveal 1.1s ease both; }
+        .hero-subtitle { animation: heroReveal 1.1s ease 0.2s both; }
+        .hero-accent { animation: heroReveal 1.1s ease 0.4s both; }
+        .practitioner-card { transition: all 0.3s ease; }
+        .practitioner-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(32,42,45,0.15); }
+        .practitioner-card.selected { ring: 4px; ring-color: #202a2d; transform: translateY(-8px); }
+        .modal-overlay { transition: opacity 0.3s ease; }
+        .modal-content { transition: transform 0.3s ease, opacity 0.3s ease; }
+    </style>
+</head>
+<body class="bg-[#cbd0b5] text-[#202a2d] font-['IBM_Plex_Sans'] antialiased selection:bg-[#202a2d] selection:text-[#cbd0b5]">
+
+    <!-- Navigation -->
+    <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/90 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 select-none cursor-pointer group">
+            <img src="../assets/logo.jpg" alt="LËTZ PHYSIO" class="h-[70px] w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
+            <span class="font-['DM_Serif_Display'] text-xl md:text-2xl text-white tracking-tight">Lëtz Physio</span>
+        </a>
+
+        <nav class="hidden lg:flex text-sm font-light text-stone-100 tracking-wide gap-x-3 gap-y-3 items-center">
+            <a href="index.html" class="nav-pill nav-pill-green">Home</a>
+            <a href="services.html" class="nav-pill nav-pill-beige">Services</a>
+            <a href="faq.html" class="nav-pill nav-pill-green">FAQ</a>
+
+            <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
+                <span>Team</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+                <div class="absolute top-full left-0 pt-6 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+                    <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
+                        <a href="arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Arthur Menzies</a>
+                        <a href="cecile.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Cécile Gasparini</a>
+                        <a href="lais.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Laïs Carneiro</a>
+                        <a href="lea.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Léa Triole</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="contact.html" class="nav-pill nav-pill-green">Contact</a>
+
+            <!-- Language Dropdown -->
+            <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
+                <span>🇬🇧 EN</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+                <div class="absolute top-full right-0 pt-6 w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+                    <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
+                        <a href="../contact.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
+                        <a href="../de/kontakt.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
+                        <a href="contact.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="flex gap-6 items-center">
+            <a href="contact.html" class="hidden md:block uppercase hover:bg-[#3d4d41] hover:border-stone-400 transition-all duration-300 text-xs font-medium text-white tracking-[0.15em] bg-[#4A5D4F]/80 border-[#647a6a] border rounded-sm pt-3 pr-6 pb-3 pl-6 shadow-xl backdrop-blur-md">
+                Book Appointment
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-36 pb-12 md:pt-48 md:pb-16">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-12">
+            <div class="max-w-3xl">
+                <h1 class="hero-title font-['DM_Serif_Display'] text-[#202a2d] text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8">
+                    book your <br><span class="italic font-normal opacity-80">appointment</span>
+                </h1>
+                <p class="hero-subtitle text-lg md:text-xl text-[#202a2d]/80 leading-relaxed max-w-2xl font-light">
+                    Choose your practitioner and book your physiotherapy session in just a few clicks.
+                </p>
+            </div>
+            <div class="hero-accent hidden md:block rotate-[-6deg] translate-y-[-2rem]">
+                <p class="font-['Reenie_Beanie'] text-[#202a2d] text-4xl">pick your physio</p>
+                <i data-lucide="arrow-down-right" class="text-[#202a2d] w-8 h-8 ml-8 mt-2 stroke-[1.5]"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section with Practitioner Selection -->
+    <section class="w-full max-w-7xl mx-auto px-6 md:px-12 mb-24">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- Arthur Menzies -->
+            <div class="practitioner-card cursor-pointer bg-white/50 rounded-[1.5rem] overflow-hidden border border-[#202a2d]/10" onclick="openBookingForm('Arthur Menzies', '../assets/Arthur Menzies.jpg')">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="../assets/Arthur Menzies.jpg" alt="Arthur Menzies" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-['DM_Serif_Display'] text-xl text-[#202a2d] tracking-tight mb-1">Arthur Menzies</h3>
+                    <p class="text-sm text-[#202a2d]/60 font-light">Physiotherapist</p>
+                    <div class="mt-4 flex items-center gap-2 text-sm text-[#202a2d]/80">
+                        <i data-lucide="calendar-plus" class="w-4 h-4 stroke-[1.5]"></i>
+                        <span>Book</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cécile Gasparini -->
+            <div class="practitioner-card cursor-pointer bg-white/50 rounded-[1.5rem] overflow-hidden border border-[#202a2d]/10" onclick="openBookingForm('Cécile Gasparini', '../assets/Cecile Gasparini.jpg')">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="../assets/Cecile Gasparini.jpg" alt="Cécile Gasparini" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-['DM_Serif_Display'] text-xl text-[#202a2d] tracking-tight mb-1">Cécile Gasparini</h3>
+                    <p class="text-sm text-[#202a2d]/60 font-light">Physiotherapist</p>
+                    <div class="mt-4 flex items-center gap-2 text-sm text-[#202a2d]/80">
+                        <i data-lucide="calendar-plus" class="w-4 h-4 stroke-[1.5]"></i>
+                        <span>Book</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Laïs Carneiro -->
+            <div class="practitioner-card cursor-pointer bg-white/50 rounded-[1.5rem] overflow-hidden border border-[#202a2d]/10" onclick="openBookingForm('Laïs Carneiro', '../assets/Lais Carneiro.jpg')">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="../assets/Lais Carneiro.jpg" alt="Laïs Carneiro" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-['DM_Serif_Display'] text-xl text-[#202a2d] tracking-tight mb-1">Laïs Carneiro</h3>
+                    <p class="text-sm text-[#202a2d]/60 font-light">Physiotherapist</p>
+                    <div class="mt-4 flex items-center gap-2 text-sm text-[#202a2d]/80">
+                        <i data-lucide="calendar-plus" class="w-4 h-4 stroke-[1.5]"></i>
+                        <span>Book</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Léa Triole -->
+            <div class="practitioner-card cursor-pointer bg-white/50 rounded-[1.5rem] overflow-hidden border border-[#202a2d]/10" onclick="openBookingForm('Léa Triole', '../assets/Léa Triole.jpg')">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="../assets/Léa Triole.jpg" alt="Léa Triole" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-['DM_Serif_Display'] text-xl text-[#202a2d] tracking-tight mb-1">Léa Triole</h3>
+                    <p class="text-sm text-[#202a2d]/60 font-light">Physiotherapist</p>
+                    <div class="mt-4 flex items-center gap-2 text-sm text-[#202a2d]/80">
+                        <i data-lucide="calendar-plus" class="w-4 h-4 stroke-[1.5]"></i>
+                        <span>Book</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Alternative Booking -->
+        <div class="mt-12 text-center">
+            <p class="text-[#202a2d]/70 font-light mb-4">Or book directly through our partner platform</p>
+            <a href="https://www.doctena.lu/fr/cabinet/luxembourg/letz-physio-430329" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-[#202a2d] text-[#cbd0b5] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-[#202a2d]/80 transition-colors">
+                Book on Doctena <i data-lucide="external-link" class="w-4 h-4 stroke-[2]"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Booking Form Modal -->
+    <div id="bookingModal" class="fixed inset-0 z-[100] hidden">
+        <div class="modal-overlay absolute inset-0 bg-[#202a2d]/60 backdrop-blur-sm" onclick="closeBookingForm()"></div>
+        <div class="modal-content absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#cbd0b5] rounded-[2rem] p-8 md:p-12 shadow-2xl">
+            <button onclick="closeBookingForm()" class="absolute top-6 right-6 w-10 h-10 rounded-full border border-[#202a2d]/20 flex items-center justify-center hover:bg-[#202a2d]/10 transition-colors">
+                <i data-lucide="x" class="w-5 h-5 stroke-[1.5]"></i>
+            </button>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Practitioner Info -->
+                <div class="md:col-span-1">
+                    <div class="aspect-[3/4] rounded-[1.5rem] overflow-hidden mb-4">
+                        <img id="modalPractitionerImage" src="" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <h3 id="modalPractitionerName" class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight"></h3>
+                    <p class="text-sm text-[#202a2d]/60 font-light">Physiotherapist</p>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="md:col-span-2">
+                    <h2 class="font-['DM_Serif_Display'] text-3xl text-[#202a2d] tracking-tight mb-6">Appointment Request</h2>
+                    <form id="bookingForm" class="space-y-5">
+                        <input type="hidden" id="selectedPractitioner" name="practitioner" value="">
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm uppercase tracking-widest text-[#202a2d]/70 font-medium mb-2">Full Name *</label>
+                                <input type="text" name="name" required class="w-full px-5 py-3 rounded-full border border-[#202a2d]/20 bg-white/50 focus:outline-none focus:border-[#202a2d]/50 transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-sm uppercase tracking-widest text-[#202a2d]/70 font-medium mb-2">Email *</label>
+                                <input type="email" name="email" required class="w-full px-5 py-3 rounded-full border border-[#202a2d]/20 bg-white/50 focus:outline-none focus:border-[#202a2d]/50 transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm uppercase tracking-widest text-[#202a2d]/70 font-medium mb-2">Address *</label>
+                            <input type="text" name="address" required class="w-full px-5 py-3 rounded-full border border-[#202a2d]/20 bg-white/50 focus:outline-none focus:border-[#202a2d]/50 transition-colors">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm uppercase tracking-widest text-[#202a2d]/70 font-medium mb-2">Gender *</label>
+                                <select name="gender" required class="w-full px-5 py-3 rounded-full border border-[#202a2d]/20 bg-white/50 focus:outline-none focus:border-[#202a2d]/50 transition-colors appearance-none cursor-pointer">
+                                    <option value="">Select...</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm uppercase tracking-widest text-[#202a2d]/70 font-medium mb-2">Service *</label>
+                                <select name="service" required class="w-full px-5 py-3 rounded-full border border-[#202a2d]/20 bg-white/50 focus:outline-none focus:border-[#202a2d]/50 transition-colors appearance-none cursor-pointer">
+                                    <option value="">Select a service...</option>
+                                    <option value="physiotherapy">General Physiotherapy</option>
+                                    <option value="sports">Sports Rehabilitation</option>
+                                    <option value="postural">Postural Therapy</option>
+                                    <option value="manual">Manual Therapy</option>
+                                    <option value="respiratory">Respiratory Physiotherapy</option>
+                                    <option value="home">Home Care</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm uppercase tracking-widest text-[#202a2d]/70 font-medium mb-2">Message (optional)</label>
+                            <textarea name="message" rows="4" class="w-full px-5 py-4 rounded-[1.5rem] border border-[#202a2d]/20 bg-white/50 focus:outline-none focus:border-[#202a2d]/50 transition-colors resize-none" placeholder="Briefly describe your situation or needs..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full inline-flex items-center justify-center gap-3 bg-[#202a2d] text-[#cbd0b5] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-[#202a2d]/80 transition-colors">
+                            Send Request <i data-lucide="send" class="w-4 h-4 stroke-[2]"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Details & Map -->
+    <section class="w-full max-w-7xl mx-auto px-6 md:px-12 mb-24">
+        <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-12 text-center">Find Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+
+            <!-- Contact Info -->
+            <div class="space-y-10">
+                <!-- Address -->
+                <div class="flex gap-6">
+                    <div class="w-14 h-14 rounded-full border border-[#202a2d]/20 flex items-center justify-center shrink-0">
+                        <i data-lucide="map-pin" class="w-6 h-6 stroke-[1.5]"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight mb-2">Address</h3>
+                        <p class="text-lg text-[#202a2d]/80 font-light">12 Rue Du Laboratoire<br>1911 Luxembourg</p>
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="flex gap-6">
+                    <div class="w-14 h-14 rounded-full border border-[#202a2d]/20 flex items-center justify-center shrink-0">
+                        <i data-lucide="phone" class="w-6 h-6 stroke-[1.5]"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight mb-2">Phone</h3>
+                        <a href="tel:+352691385556" class="text-lg text-[#202a2d]/80 font-light hover:text-[#202a2d] transition-colors">+352 691 385 556</a>
+                    </div>
+                </div>
+
+                <!-- Hours -->
+                <div class="flex gap-6">
+                    <div class="w-14 h-14 rounded-full border border-[#202a2d]/20 flex items-center justify-center shrink-0">
+                        <i data-lucide="clock" class="w-6 h-6 stroke-[1.5]"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight mb-2">Opening Hours</h3>
+                        <div class="text-lg text-[#202a2d]/80 font-light space-y-1">
+                            <p>Monday – Friday: 08:00 – 19:00</p>
+                            <p>Saturday – Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="flex gap-6">
+                    <div class="w-14 h-14 rounded-full border border-[#202a2d]/20 flex items-center justify-center shrink-0">
+                        <i data-lucide="languages" class="w-6 h-6 stroke-[1.5]"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight mb-2">Languages</h3>
+                        <p class="text-lg text-[#202a2d]/80 font-light">English, French, Spanish, Portuguese</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="aspect-square md:aspect-auto rounded-[2rem] overflow-hidden bg-[#202a2d]/5">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2585.5!2d6.137!3d49.603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDM2JzEwLjgiTiA2wrAwOCcxMy4yIkU!5e0!3m2!1sen!2slu!4v1" width="100%" height="100%" style="border:0; min-height: 400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-full"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Accessibility Info -->
+    <section class="w-full px-4 md:px-12 mb-24">
+        <div class="w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-[#202a2d]/20 p-8 md:p-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <i data-lucide="accessibility" class="w-10 h-10 text-[#202a2d] mx-auto mb-4 stroke-[1.5]"></i>
+                    <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight mb-2">Accessible</h3>
+                    <p class="text-[#202a2d]/70 font-light">Ground-level access for people with reduced mobility</p>
+                </div>
+                <div>
+                    <i data-lucide="car" class="w-10 h-10 text-[#202a2d] mx-auto mb-4 stroke-[1.5]"></i>
+                    <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight mb-2">Parking</h3>
+                    <p class="text-[#202a2d]/70 font-light">Parking available nearby</p>
+                </div>
+                <div>
+                    <i data-lucide="train" class="w-10 h-10 text-[#202a2d] mx-auto mb-4 stroke-[1.5]"></i>
+                    <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight mb-2">Public Transport</h3>
+                    <p class="text-[#202a2d]/70 font-light">Easily accessible by bus and tram</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full px-6 md:px-12 py-16 bg-[#202a2d] text-[#cbd0b5]">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="../assets/logo.jpg" alt="LËTZ PHYSIO" class="h-10 rounded-full">
+                    <span class="font-['DM_Serif_Display'] text-3xl">Lëtz Physio</span>
+                </a>
+                <div class="flex gap-8 text-sm font-light">
+                    <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                    <a href="team.html" class="hover:text-white transition-colors">Team</a>
+                    <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
+                    <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                </div>
+                <p class="text-xs opacity-60 uppercase tracking-widest">&copy; 2024 LËTZ PHYSIO</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function openBookingForm(name, imageSrc) {
+            const modal = document.getElementById('bookingModal');
+            const practitionerName = document.getElementById('modalPractitionerName');
+            const practitionerImage = document.getElementById('modalPractitionerImage');
+            const selectedPractitioner = document.getElementById('selectedPractitioner');
+
+            practitionerName.textContent = name;
+            practitionerImage.src = imageSrc;
+            practitionerImage.alt = name;
+            selectedPractitioner.value = name;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+
+            // Re-initialize lucide icons for the modal
+            lucide.createIcons();
+        }
+
+        function closeBookingForm() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeBookingForm();
+            }
+        });
+
+        // Form submission handler
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // Here you would typically send the data to a server
+            alert('Thank you for your request! We will contact you soon to confirm your appointment with ' + data.practitioner + '.');
+            closeBookingForm();
+            this.reset();
+        });
+    </script>
+</body>
+</html>

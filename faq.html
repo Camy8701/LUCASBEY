@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - LËTZ PHYSIO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <style>
+        .nav-pill { padding: 0.4rem 1rem; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.45); display: inline-flex; align-items: center; gap: 0.35rem; color: rgba(255,255,255,0.95); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.05em; transition: all 0.3s ease; text-decoration: none; }
+        .nav-pill-green:hover { background: #2f6b4b; border-color: #2f6b4b; color: #fff; box-shadow: 0 10px 20px rgba(47,107,75,0.25); transform: translateY(-1px); }
+        .nav-pill-beige:hover { background: #f2e6d0; border-color: #f2e6d0; color: #2f3a2f; box-shadow: 0 10px 20px rgba(242,230,208,0.35); transform: translateY(-1px); }
+        @keyframes heroReveal { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-title { animation: heroReveal 1.1s ease both; }
+        .hero-subtitle { animation: heroReveal 1.1s ease 0.2s both; }
+    </style>
+</head>
+<body class="bg-[#cbd0b5] text-[#202a2d] font-['IBM_Plex_Sans'] antialiased selection:bg-[#202a2d] selection:text-[#cbd0b5]">
+
+    <!-- Navigation -->
+    <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/90 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 select-none cursor-pointer group">
+            <img src="assets/logo.jpg" alt="LËTZ PHYSIO" class="h-[70px] w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
+            <span class="font-['DM_Serif_Display'] text-xl md:text-2xl text-white tracking-tight">Lëtz Physio</span>
+        </a>
+
+        <nav class="hidden lg:flex text-sm font-light text-stone-100 tracking-wide gap-x-3 gap-y-3 items-center">
+            <a href="index.html" class="nav-pill nav-pill-green">Accueil</a>
+            <a href="services.html" class="nav-pill nav-pill-beige">Services</a>
+            <a href="faq.html" class="nav-pill nav-pill-green">FAQ</a>
+
+            <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
+                <span>Équipe</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+                <div class="absolute top-full left-0 pt-6 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+                    <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
+                        <a href="arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Arthur Menzies</a>
+                        <a href="cecile.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Cécile Gasparini</a>
+                        <a href="lais.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Laïs Carneiro</a>
+                        <a href="lea.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Léa Triole</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="contact.html" class="nav-pill nav-pill-green">Contact</a>
+
+            <!-- Language Dropdown -->
+            <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
+                <span>🇫🇷 FR</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+                <div class="absolute top-full right-0 pt-6 w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+                    <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
+                        <a href="faq.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
+                        <a href="de/faq.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
+                        <a href="en/faq.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="flex gap-6 items-center">
+            <a href="contact.html" class="hidden md:block uppercase hover:bg-[#3d4d41] hover:border-stone-400 transition-all duration-300 text-xs font-medium text-white tracking-[0.15em] bg-[#4A5D4F]/80 border-[#647a6a] border rounded-sm pt-3 pr-6 pb-3 pl-6 shadow-xl backdrop-blur-md">
+                Prendre rendez-vous
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-36 pb-12 md:pt-48 md:pb-20">
+        <div class="max-w-3xl">
+            <h1 class="hero-title font-['DM_Serif_Display'] text-[#202a2d] text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8">
+                questions <br><span class="italic font-normal opacity-80">fréquentes</span>
+            </h1>
+            <p class="hero-subtitle text-lg md:text-xl text-[#202a2d]/80 leading-relaxed max-w-2xl font-light">
+                Tout ce que vous devez savoir sur votre parcours de kinésithérapie avec nous.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Items -->
+    <section class="w-full max-w-4xl mx-auto px-6 md:px-12 mb-32">
+        <div class="space-y-0">
+
+            <!-- FAQ 1 -->
+            <details class="group border-b border-[#202a2d]/10 py-8">
+                <summary class="flex items-center justify-between cursor-pointer list-none">
+                    <h3 class="font-['DM_Serif_Display'] text-2xl md:text-3xl text-[#202a2d] tracking-tight pr-8">Comment prendre rendez-vous ?</h3>
+                    <i data-lucide="plus" class="w-6 h-6 stroke-[1.5] shrink-0 group-open:rotate-45 transition-transform duration-300"></i>
+                </summary>
+                <div class="pt-6 pb-2">
+                    <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
+                        Vous pouvez prendre rendez-vous en nous appelant au <strong>+352 691 385 556</strong>, via notre <a href="https://www.doctena.lu/fr/cabinet/luxembourg/letz-physio-430329" target="_blank" class="underline hover:opacity-60">page Doctena</a> pour la réservation en ligne, ou par SMS pour des demandes rapides.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 2 -->
+            <details class="group border-b border-[#202a2d]/10 py-8">
+                <summary class="flex items-center justify-between cursor-pointer list-none">
+                    <h3 class="font-['DM_Serif_Display'] text-2xl md:text-3xl text-[#202a2d] tracking-tight pr-8">Ai-je besoin d'une ordonnance ?</h3>
+                    <i data-lucide="plus" class="w-6 h-6 stroke-[1.5] shrink-0 group-open:rotate-45 transition-transform duration-300"></i>
+                </summary>
+                <div class="pt-6 pb-2">
+                    <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
+                        Oui, une ordonnance médicale valide est nécessaire pour le remboursement par l'assurance. Votre médecin vous fournira une ordonnance précisant le type et le nombre de séances de kinésithérapie nécessaires. Sans ordonnance, les séances peuvent être réservées mais seront à votre charge intégrale.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 3 -->
+            <details class="group border-b border-[#202a2d]/10 py-8">
+                <summary class="flex items-center justify-between cursor-pointer list-none">
+                    <h3 class="font-['DM_Serif_Display'] text-2xl md:text-3xl text-[#202a2d] tracking-tight pr-8">Combien ça coûte ? Est-ce couvert par l'assurance ?</h3>
+                    <i data-lucide="plus" class="w-6 h-6 stroke-[1.5] shrink-0 group-open:rotate-45 transition-transform duration-300"></i>
+                </summary>
+                <div class="pt-6 pb-2">
+                    <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
+                        Avec une ordonnance valide, la CNS (Caisse Nationale de Santé) couvre généralement <strong>70%</strong> des frais de kinésithérapie. Vous êtes responsable des 30% restants (ticket modérateur). Nous fournissons toute la documentation nécessaire pour vos demandes de remboursement.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 4 -->
+            <details class="group border-b border-[#202a2d]/10 py-8">
+                <summary class="flex items-center justify-between cursor-pointer list-none">
+                    <h3 class="font-['DM_Serif_Display'] text-2xl md:text-3xl text-[#202a2d] tracking-tight pr-8">Que dois-je apporter à mon premier rendez-vous ?</h3>
+                    <i data-lucide="plus" class="w-6 h-6 stroke-[1.5] shrink-0 group-open:rotate-45 transition-transform duration-300"></i>
+                </summary>
+                <div class="pt-6 pb-2">
+                    <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
+                        Veuillez apporter votre ordonnance médicale, votre carte CNS, toute imagerie médicale pertinente (radiographies, IRM) et des vêtements confortables permettant une liberté de mouvement. Arrivez 5 à 10 minutes en avance pour remplir les documents nécessaires.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 5 -->
+            <details class="group border-b border-[#202a2d]/10 py-8">
+                <summary class="flex items-center justify-between cursor-pointer list-none">
+                    <h3 class="font-['DM_Serif_Display'] text-2xl md:text-3xl text-[#202a2d] tracking-tight pr-8">Quelle est la durée d'une séance ?</h3>
+                    <i data-lucide="plus" class="w-6 h-6 stroke-[1.5] shrink-0 group-open:rotate-45 transition-transform duration-300"></i>
+                </summary>
+                <div class="pt-6 pb-2">
+                    <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
+                        Une séance standard de kinésithérapie dure environ <strong>30 minutes</strong>. Votre premier rendez-vous peut être légèrement plus long pour permettre un bilan complet et la discussion du plan de traitement. Certains traitements spécialisés peuvent nécessiter des séances plus longues.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 6 -->
+            <details class="group border-b border-[#202a2d]/10 py-8">
+                <summary class="flex items-center justify-between cursor-pointer list-none">
+                    <h3 class="font-['DM_Serif_Display'] text-2xl md:text-3xl text-[#202a2d] tracking-tight pr-8">Quelles langues parlez-vous ?</h3>
+                    <i data-lucide="plus" class="w-6 h-6 stroke-[1.5] shrink-0 group-open:rotate-45 transition-transform duration-300"></i>
+                </summary>
+                <div class="pt-6 pb-2">
+                    <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
+                        Notre équipe parle collectivement <strong>anglais, français, espagnol et portugais</strong>. Nous servons la communauté internationale diversifiée du Luxembourg et assurons une communication claire dans votre langue préférée.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 7 -->
+            <details class="group border-b border-[#202a2d]/10 py-8">
+                <summary class="flex items-center justify-between cursor-pointer list-none">
+                    <h3 class="font-['DM_Serif_Display'] text-2xl md:text-3xl text-[#202a2d] tracking-tight pr-8">Le cabinet est-il accessible ?</h3>
+                    <i data-lucide="plus" class="w-6 h-6 stroke-[1.5] shrink-0 group-open:rotate-45 transition-transform duration-300"></i>
+                </summary>
+                <div class="pt-6 pb-2">
+                    <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
+                        Oui, notre cabinet est situé au rez-de-chaussée avec un accès de plain-pied pour les personnes à mobilité réduite. Du stationnement est disponible à proximité et nous sommes facilement accessibles par les transports en commun (bus et tram).
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 8 -->
+            <details class="group border-b border-[#202a2d]/10 py-8">
+                <summary class="flex items-center justify-between cursor-pointer list-none">
+                    <h3 class="font-['DM_Serif_Display'] text-2xl md:text-3xl text-[#202a2d] tracking-tight pr-8">Quelle est votre politique d'annulation ?</h3>
+                    <i data-lucide="plus" class="w-6 h-6 stroke-[1.5] shrink-0 group-open:rotate-45 transition-transform duration-300"></i>
+                </summary>
+                <div class="pt-6 pb-2">
+                    <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
+                        Veuillez nous prévenir au moins <strong>24 heures à l'avance</strong> si vous devez annuler ou reporter votre rendez-vous. Les annulations tardives ou les absences non signalées peuvent être facturées en totalité. Nous comprenons que les urgences arrivent – contactez-nous dès que possible.
+                    </p>
+                </div>
+            </details>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="w-full px-4 md:px-12 mb-24">
+        <div class="w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-[#202a2d] p-8 md:p-16 text-center">
+            <h2 class="font-['DM_Serif_Display'] text-[#cbd0b5] text-4xl md:text-5xl tracking-tight leading-[0.9] mb-6">
+                encore des <span class="italic font-normal opacity-80">questions ?</span>
+            </h2>
+            <p class="text-[#cbd0b5]/80 font-light text-lg max-w-xl mx-auto mb-8">
+                N'hésitez pas à nous contacter. Nous sommes là pour vous aider.
+            </p>
+            <a href="contact.html" class="inline-flex items-center gap-3 bg-[#cbd0b5] text-[#202a2d] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-white transition-colors">
+                Nous contacter <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full px-6 md:px-12 py-16 bg-[#202a2d] text-[#cbd0b5]">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/logo.jpg" alt="LËTZ PHYSIO" class="h-10 rounded-full">
+                    <span class="font-['DM_Serif_Display'] text-3xl">Lëtz Physio</span>
+                </a>
+                <div class="flex gap-8 text-sm font-light">
+                    <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                    <a href="team.html" class="hover:text-white transition-colors">Équipe</a>
+                    <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
+                    <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                </div>
+                <p class="text-xs opacity-60 uppercase tracking-widest">&copy; 2024 LËTZ PHYSIO</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

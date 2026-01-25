@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leistungen - LËTZ PHYSIO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <style>
+        .nav-pill { padding: 0.4rem 1rem; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.45); display: inline-flex; align-items: center; gap: 0.35rem; color: rgba(255,255,255,0.95); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.05em; transition: all 0.3s ease; text-decoration: none; }
+        .nav-pill-green:hover { background: #2f6b4b; border-color: #2f6b4b; color: #fff; box-shadow: 0 10px 20px rgba(47,107,75,0.25); transform: translateY(-1px); }
+        .nav-pill-beige:hover { background: #f2e6d0; border-color: #f2e6d0; color: #2f3a2f; box-shadow: 0 10px 20px rgba(242,230,208,0.35); transform: translateY(-1px); }
+        @keyframes heroReveal { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-title { animation: heroReveal 1.1s ease both; }
+        .hero-subtitle { animation: heroReveal 1.1s ease 0.2s both; }
+        .hero-accent { animation: heroReveal 1.1s ease 0.4s both; }
+    </style>
+</head>
+<body class="bg-[#cbd0b5] text-[#202a2d] font-['IBM_Plex_Sans'] antialiased selection:bg-[#202a2d] selection:text-[#cbd0b5]">
+
+    <!-- Navigation -->
+    <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/90 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 select-none cursor-pointer group">
+            <img src="assets/logo.jpg" alt="LËTZ PHYSIO" class="h-[70px] w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
+            <span class="font-['DM_Serif_Display'] text-xl md:text-2xl text-white tracking-tight">Lëtz Physio</span>
+        </a>
+
+        <nav class="hidden lg:flex text-sm font-light text-stone-100 tracking-wide gap-x-3 gap-y-3 items-center">
+            <a href="index.html" class="nav-pill nav-pill-green">Startseite</a>
+            <a href="leistungen.html" class="nav-pill nav-pill-beige">Leistungen</a>
+            <a href="faq.html" class="nav-pill nav-pill-green">FAQ</a>
+
+            <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
+                <span>Team</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+                <div class="absolute top-full left-0 pt-6 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+                    <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
+                        <a href="arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Arthur Menzies</a>
+                        <a href="cecile.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Cécile Gasparini</a>
+                        <a href="lais.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Laïs Carneiro</a>
+                        <a href="lea.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Léa Triole</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="kontakt.html" class="nav-pill nav-pill-green">Kontakt</a>
+
+            <!-- Language Dropdown -->
+            <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
+                <span>&#127465;&#127466; DE</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+                <div class="absolute top-full right-0 pt-6 w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+                    <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
+                        <a href="../index.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">&#127467;&#127479; Français</a>
+                        <a href="index.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">&#127465;&#127466; Deutsch</a>
+                        <a href="../en/index.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">&#127468;&#127463; English</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="flex gap-6 items-center">
+            <a href="kontakt.html" class="hidden md:block uppercase hover:bg-[#3d4d41] hover:border-stone-400 transition-all duration-300 text-xs font-medium text-white tracking-[0.15em] bg-[#4A5D4F]/80 border-[#647a6a] border rounded-sm pt-3 pr-6 pb-3 pl-6 shadow-xl backdrop-blur-md">Termin buchen</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-36 pb-12 md:pt-48 md:pb-20">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-12">
+            <div class="max-w-3xl">
+                <h1 class="hero-title font-['DM_Serif_Display'] text-[#202a2d] text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8">
+                    unsere <br><span class="italic font-normal opacity-80">Techniken</span>
+                </h1>
+                <p class="hero-subtitle text-lg md:text-xl text-[#202a2d]/80 leading-relaxed max-w-2xl font-light">
+                    Wir bieten ein umfassendes Spektrum an Physiotherapie-Leistungen, die auf Ihre individuellen Bedürfnisse zugeschnitten sind. Von Sportverletzungen bis zur Schmerztherapie liefert unser evidenzbasierter Ansatz nachhaltige Ergebnisse.
+                </p>
+            </div>
+            <div class="hero-accent hidden md:block rotate-[-6deg] translate-y-[-2rem]">
+                <p class="font-['Reenie_Beanie'] text-[#202a2d] text-4xl">heilende Hände</p>
+                <i data-lucide="arrow-down-right" class="text-[#202a2d] w-8 h-8 ml-8 mt-2 stroke-[1.5]"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Detail -->
+    <section class="w-full max-w-7xl mx-auto px-6 md:px-12 mb-32">
+        <div class="grid grid-cols-1 gap-16 md:gap-24">
+
+            <!-- Service 1: Rücken & Gelenke -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1200&auto=format&fit=crop" alt="Rücken- und Gelenkrehabilitation" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-3 block">01</span>
+                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Rücken- & Gelenkrehabilitation</h2>
+                    <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
+                        Umfassende Behandlung von Wirbelsäulenerkrankungen, Bandscheibenvorfällen, Ischias und Gelenkschmerzen. Wir kombinieren manuelle Therapie mit gezielten Übungen, um Mobilität wiederherzustellen, Schmerzen zu lindern und Rückfälle zu vermeiden.
+                    </p>
+                    <ul class="space-y-3 text-[#202a2d]/70">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Wirbelsäulenmobilisation</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Gelenkmanipulation</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Haltungskorrektur</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Kräftigungsprogramme</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 2: Sportphysiotherapie -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="order-1 md:order-2 aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1200&auto=format&fit=crop" alt="Sportphysiotherapie" class="w-full h-full object-cover">
+                </div>
+                <div class="order-2 md:order-1">
+                    <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-3 block">02</span>
+                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Sportphysiotherapie</h2>
+                    <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
+                        Spezialisierte Betreuung für Sportler aller Leistungsstufen. Von der akuten Verletzungsbehandlung bis zur Leistungsoptimierung helfen wir Ihnen, schneller zu genesen und mit sportspezifischen Rehabilitationsprogrammen bessere Ergebnisse zu erzielen.
+                    </p>
+                    <ul class="space-y-3 text-[#202a2d]/70">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Verletzungsrehabilitation</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Return-to-Sport-Programme</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Leistungsscreening</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Präventives Training</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 3: Lymphdrainage -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200&auto=format&fit=crop" alt="Lymphdrainage" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-3 block">03</span>
+                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Lymphdrainage</h2>
+                    <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
+                        Sanfte, rhythmische manuelle Technik, die das Lymphsystem stimuliert, um Schwellungen zu reduzieren, den Körper zu entgiften und die Heilung zu fördern. Besonders wirksam bei postoperativer Erholung und chronischen Erkrankungen.
+                    </p>
+                    <ul class="space-y-3 text-[#202a2d]/70">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Ödemreduktion</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Postoperative Erholung</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Immunsystemunterstützung</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Entspannungstherapie</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 4: Manuelle Therapie -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="order-1 md:order-2 aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
+                    <img src="https://images.unsplash.com/photo-1573883430060-dcfcff703b27?q=80&w=1200&auto=format&fit=crop" alt="Manuelle Therapie" class="w-full h-full object-cover">
+                </div>
+                <div class="order-2 md:order-1">
+                    <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-3 block">04</span>
+                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Manuelle Therapie</h2>
+                    <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
+                        Praktische Techniken einschließlich Tiefengewebsmassage, Triggerpunkttherapie und myofasziale Lösung. Entwickelt, um Muskelverspannungen zu lösen, die Durchblutung zu verbessern und die natürliche Heilung zu beschleunigen.
+                    </p>
+                    <ul class="space-y-3 text-[#202a2d]/70">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Tiefengewebsarbeit</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Triggerpunktlösung</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Myofasziale Techniken</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Therapeutische Massage</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Insurance Info -->
+    <section class="w-full px-4 md:px-12 mb-24">
+        <div class="w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-[#202a2d]/20 p-8 md:p-16">
+            <div class="max-w-3xl mx-auto text-center">
+                <i data-lucide="shield-check" class="w-12 h-12 text-[#202a2d] mx-auto mb-6 stroke-[1.5]"></i>
+                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Versicherungsschutz</h2>
+                <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
+                    Mit einem gültigen Rezept Ihres Arztes übernimmt die CNS (Caisse Nationale de Santé) in der Regel 70% der Physiotherapiekosten. Sie zahlen nur 30% aus eigener Tasche. Wir helfen Ihnen gerne bei der Abwicklung.
+                </p>
+                <a href="kontakt.html" class="inline-flex items-center gap-3 bg-[#202a2d] text-[#cbd0b5] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-[#202a2d]/80 transition-colors">
+                    Jetzt starten <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full px-6 md:px-12 py-16 bg-[#202a2d] text-[#cbd0b5]">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/logo.jpg" alt="LËTZ PHYSIO" class="h-10 rounded-full">
+                    <span class="font-['DM_Serif_Display'] text-3xl">Lëtz Physio</span>
+                </a>
+                <div class="flex gap-8 text-sm font-light">
+                    <a href="leistungen.html" class="hover:text-white transition-colors">Leistungen</a>
+                    <a href="team.html" class="hover:text-white transition-colors">Team</a>
+                    <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
+                    <a href="kontakt.html" class="hover:text-white transition-colors">Kontakt</a>
+                </div>
+                <p class="text-xs opacity-60 uppercase tracking-widest">&copy; 2024 LËTZ PHYSIO</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

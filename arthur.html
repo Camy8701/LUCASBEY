@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur Menzies - LËTZ PHYSIO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <style>
+        .nav-pill { padding: 0.4rem 1rem; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.45); display: inline-flex; align-items: center; gap: 0.35rem; color: rgba(255,255,255,0.95); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.05em; transition: all 0.3s ease; text-decoration: none; }
+        .nav-pill-green:hover { background: #2f6b4b; border-color: #2f6b4b; color: #fff; box-shadow: 0 10px 20px rgba(47,107,75,0.25); transform: translateY(-1px); }
+        .nav-pill-beige:hover { background: #f2e6d0; border-color: #f2e6d0; color: #2f3a2f; box-shadow: 0 10px 20px rgba(242,230,208,0.35); transform: translateY(-1px); }
+    </style>
+</head>
+<body class="bg-[#cbd0b5] text-[#202a2d] font-['IBM_Plex_Sans'] antialiased selection:bg-[#202a2d] selection:text-[#cbd0b5]">
+
+    <!-- Navigation -->
+    <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/90 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 select-none cursor-pointer group">
+            <img src="assets/logo.jpg" alt="LËTZ PHYSIO" class="h-[70px] w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
+            <span class="font-['DM_Serif_Display'] text-xl md:text-2xl text-white tracking-tight">Lëtz Physio</span>
+        </a>
+
+        <nav class="hidden lg:flex text-sm font-light text-stone-100 tracking-wide gap-x-3 gap-y-3 items-center">
+            <a href="index.html" class="nav-pill nav-pill-green">Accueil</a>
+            <a href="services.html" class="nav-pill nav-pill-beige">Services</a>
+            <a href="faq.html" class="nav-pill nav-pill-green">FAQ</a>
+
+            <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
+                <span>Équipe</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+                <div class="absolute top-full left-0 pt-6 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+                    <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
+                        <a href="arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Arthur Menzies</a>
+                        <a href="cecile.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Cécile Gasparini</a>
+                        <a href="lais.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Laïs Carneiro</a>
+                        <a href="lea.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Léa Triole</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="contact.html" class="nav-pill nav-pill-green">Contact</a>
+
+            <!-- Language Dropdown -->
+            <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
+                <span>🇫🇷 FR</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+                <div class="absolute top-full right-0 pt-6 w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+                    <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
+                        <a href="arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
+                        <a href="de/arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
+                        <a href="en/arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="flex gap-6 items-center">
+            <a href="contact.html" class="hidden md:block uppercase hover:bg-[#3d4d41] hover:border-stone-400 transition-all duration-300 text-xs font-medium text-white tracking-[0.15em] bg-[#4A5D4F]/80 border-[#647a6a] border rounded-sm pt-3 pr-6 pb-3 pl-6 shadow-xl backdrop-blur-md">
+                Prendre rendez-vous
+            </a>
+        </div>
+    </header>
+
+    <!-- Back Link -->
+    <div class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-36">
+        <a href="team.html" class="inline-flex items-center gap-2 text-sm uppercase tracking-widest font-medium text-[#202a2d]/70 hover:text-[#202a2d] transition-colors">
+            <i data-lucide="arrow-left" class="w-4 h-4 stroke-[1.5]"></i> Retour à l'équipe
+        </a>
+    </div>
+
+    <!-- Profile Section -->
+    <section class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-12 pb-20 md:pt-20 md:pb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+
+            <!-- Photo -->
+            <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
+                <img src="assets/Arthur Menzies.jpg" alt="Arthur Menzies" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Info -->
+            <div class="flex flex-col justify-center">
+                <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-4">Kinésithérapeute</span>
+                <h1 class="font-['DM_Serif_Display'] text-[#202a2d] text-5xl md:text-7xl tracking-tight leading-[0.9] mb-6">
+                    Arthur <br><span class="italic font-normal opacity-80">Menzies</span>
+                </h1>
+                <p class="text-lg md:text-xl text-[#202a2d]/80 leading-relaxed font-light mb-8">
+                    Arthur est spécialisé dans la rééducation sportive et la thérapie musculo-squelettique. Passionné par l'accompagnement des sportifs et des personnes actives dans leur récupération, il combine des techniques manuelles basées sur les preuves avec des programmes d'exercices ciblés pour restaurer la fonction et prévenir les récidives.
+                </p>
+
+                <div class="space-y-6 mb-10">
+                    <div>
+                        <h3 class="font-semibold text-sm uppercase tracking-widest text-[#202a2d]/70 mb-3">Spécialisations</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Blessures sportives</span>
+                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Musculo-squelettique</span>
+                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Rééducation</span>
+                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Thérapie manuelle</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-sm uppercase tracking-widest text-[#202a2d]/70 mb-3">Langues</h3>
+                        <p class="text-[#202a2d]/80 font-light">Anglais, Français</p>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="inline-flex items-center gap-3 bg-[#202a2d] text-[#cbd0b5] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-[#202a2d]/80 transition-colors w-fit">
+                    Réserver avec Arthur <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="w-full px-4 md:px-12 mb-24">
+        <div class="w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-[#202a2d]/20 p-8 md:p-16">
+            <div class="max-w-3xl">
+                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#202a2d] tracking-tight mb-6">Approche thérapeutique</h2>
+                <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
+                    Arthur croit en une approche holistique de la rééducation, traitant non seulement les symptômes mais aussi la cause profonde des dysfonctionnements. Chaque plan de traitement est individualisé, combinant thérapie manuelle et prescription d'exercices progressifs.
+                </p>
+                <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
+                    Que vous récupériez d'une blessure sportive, gériez une douleur chronique ou cherchiez à améliorer vos performances physiques, Arthur travaille avec vous pour définir des objectifs réalistes et suivre vos progrès à chaque étape.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full px-6 md:px-12 py-16 bg-[#202a2d] text-[#cbd0b5]">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/logo.jpg" alt="LËTZ PHYSIO" class="h-10 rounded-full">
+                    <span class="font-['DM_Serif_Display'] text-3xl">Lëtz Physio</span>
+                </a>
+                <div class="flex gap-8 text-sm font-light">
+                    <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                    <a href="team.html" class="hover:text-white transition-colors">Équipe</a>
+                    <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
+                    <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                </div>
+                <p class="text-xs opacity-60 uppercase tracking-widest">&copy; 2024 LËTZ PHYSIO</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
