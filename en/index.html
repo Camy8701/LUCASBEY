@@ -18,18 +18,24 @@
         .hero-subtitle { animation: heroReveal 1.1s ease 0.2s both; }
         .hero-accent { animation: heroReveal 1.1s ease 0.4s both; }
         .hero-typewriter {
-            border-right: 3px solid currentColor;
-            overflow: hidden;
             display: inline-block;
             vertical-align: bottom;
-            animation: blink-cursor 0.75s step-end infinite;
         }
         .hero-typewriter-singleline {
             white-space: nowrap;
         }
+        .hero-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 0.9em;
+            background: currentColor;
+            margin-left: 2px;
+            vertical-align: -0.1em;
+            animation: blink-cursor 0.75s step-end infinite;
+        }
         @keyframes blink-cursor {
-            from, to { border-color: transparent; }
-            50% { border-color: currentColor; }
+            from, to { opacity: 0; }
+            50% { opacity: 1; }
         }
     </style>
 </head>
@@ -129,7 +135,7 @@
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-12">
             <div class="max-w-3xl">
                 <h1 class="hero-title font-['DM_Serif_Display'] text-[#202a2d] text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8">
-                    <span id="hero-typewriter" class="hero-typewriter hero-typewriter-singleline">your body is</span> <br><span class="italic font-normal opacity-80">in good hands</span>
+                    <span id="hero-typewriter" class="hero-typewriter hero-typewriter-singleline">your body is</span><span class="hero-cursor" aria-hidden="true"></span> <br><span class="italic font-normal opacity-80">in good hands</span>
                 </h1>
                 <p class="hero-subtitle text-lg md:text-xl text-[#202a2d]/80 leading-relaxed max-w-2xl font-light">
                     Expert physiotherapy in the heart of Luxembourg. Our team of dedicated physiotherapists offers personalised care to help you move better, feel stronger, and live fully.
