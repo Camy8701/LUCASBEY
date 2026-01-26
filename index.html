@@ -23,13 +23,8 @@
             display: inline-block;
             vertical-align: bottom;
         }
-        .hero-typewriter-singleline {
-            white-space: nowrap;
-        }
-        .hero-typewriter-multiline {
-            white-space: pre-line;
-        }
-        .hero-cursor {
+        .hero-typewriter::after {
+            content: "";
             display: inline-block;
             width: 3px;
             height: 0.9em;
@@ -37,6 +32,12 @@
             margin-left: 2px;
             vertical-align: -0.1em;
             animation: blink-cursor 0.75s step-end infinite;
+        }
+        .hero-typewriter-singleline {
+            white-space: nowrap;
+        }
+        .hero-typewriter-multiline {
+            white-space: pre-line;
         }
         .hero-accent-note {
             animation: note-float 2.6s ease-in-out infinite;
@@ -148,7 +149,7 @@
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-12">
             <div class="max-w-3xl">
                 <h1 class="hero-title font-['DM_Serif_Display'] text-[#202a2d] text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8">
-                    <span id="hero-typewriter" class="hero-typewriter hero-typewriter-multiline" data-text="Votre corps|est">Votre corps est</span><span class="hero-cursor" aria-hidden="true"></span> <br><span class="italic font-normal opacity-80">entre de bonnes mains</span>
+                    <span id="hero-typewriter" class="hero-typewriter hero-typewriter-multiline">Votre corps est</span> <br><span class="italic font-normal opacity-80">entre de bonnes mains</span>
                 </h1>
                 <p class="hero-subtitle text-lg md:text-xl text-[#202a2d]/80 leading-relaxed max-w-2xl font-light">
                     Kinésithérapie experte au cœur du Luxembourg. Notre équipe de kinésithérapeutes dévoués vous offre des soins personnalisés pour mieux bouger, vous sentir plus fort et vivre pleinement.
@@ -317,9 +318,9 @@
 
     <script>
         (function() {
-            const typeSpeed = 130;
-            const deleteSpeed = 65;
-            const pauseTime = 2200;
+            const typeSpeed = 170;
+            const deleteSpeed = 85;
+            const pauseTime = 2860;
 
             function createTypewriter(elementId) {
                 const element = document.getElementById(elementId);
@@ -328,9 +329,11 @@
                     return;
                 }
 
-                const text = element.dataset.text
-                    ? element.dataset.text.replace(/\\n/g, "\n").replace(/\|/g, "\n")
-                    : element.textContent.trim();
+                const rawText = element.textContent.trim();
+                let text = rawText;
+                if (window.matchMedia("(max-width: 640px)").matches) {
+                    text = rawText.replace(/\s+est$/, "\nest");
+                }
                 let charIndex = 0;
                 let isDeleting = false;
 
