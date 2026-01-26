@@ -18,7 +18,7 @@
 <body class="bg-[#cbd0b5] text-[#202a2d] font-['IBM_Plex_Sans'] antialiased selection:bg-[#202a2d] selection:text-[#cbd0b5]">
 
     <!-- Navigation -->
-    <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/90 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between">
+    <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/90 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between relative">
         <a href="index.html" class="flex items-center gap-3 select-none cursor-pointer group">
             <img src="assets/logo.png" alt="LËTZ PHYSIO" class="h-[70px] w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
             <span class="font-['DM_Serif_Display'] text-xl md:text-2xl text-white tracking-tight">Lëtz Physio</span>
@@ -58,10 +58,50 @@
             </div>
         </nav>
 
+
+        <div class="flex lg:hidden items-center gap-2">
+            <button id="mobile-lang-toggle" class="nav-pill nav-pill-beige px-3 py-2 text-xs uppercase tracking-widest">Langue</button>
+            <button id="mobile-menu-toggle" class="nav-pill nav-pill-green px-3 py-2 text-xs uppercase tracking-widest">Menu</button>
+        </div>
+
         <div class="flex gap-6 items-center">
             <a href="contact.html" class="hidden md:block uppercase hover:bg-[#3d4d41] hover:border-stone-400 transition-all duration-300 text-xs font-medium text-white tracking-[0.15em] bg-[#4A5D4F]/80 border-[#647a6a] border rounded-sm pt-3 pr-6 pb-3 pl-6 shadow-xl backdrop-blur-md">
                 Prendre rendez-vous
             </a>
+        </div>
+
+        <div id="mobile-menu" class="absolute top-full left-0 w-full lg:hidden hidden">
+            <div class="mx-6 md:mx-12 mt-4 mb-6 bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm p-4 text-stone-100">
+                <div class="flex flex-col gap-2">
+                    <a href="index.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Accueil</a>
+                    <a href="services.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Services</a>
+                    <a href="faq.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">FAQ</a>
+                    <a href="contact.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Contact</a>
+                    <div class="border-t border-white/10 pt-3 mt-2">
+                        <p class="px-4 text-xs uppercase tracking-widest text-stone-400 mb-2">Équipe</p>
+                        <div class="flex flex-col">
+                            <a href="arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Arthur Menzies</a>
+                            <a href="cecile.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Cécile Gasparini</a>
+                            <a href="lais.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Laïs Carneiro</a>
+                            <a href="lea.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Léa Triole</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="mt-4 inline-flex items-center justify-center gap-2 bg-[#cbd0b5] text-[#202a2d] px-6 py-3 rounded-full text-xs uppercase tracking-widest font-semibold hover:bg-white transition-colors">
+                        Prendre rendez-vous <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="mobile-lang" class="absolute top-full left-0 w-full lg:hidden hidden">
+            <div class="mx-6 md:mx-12 mt-4 mb-6 bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm p-4 text-stone-100">
+                <div class="flex flex-col">
+                    <a href="arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
+                    <a href="de/arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
+                    <a href="en/arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -164,6 +204,42 @@
         </div>
     </footer>
 
+    <script>
+        (function() {
+            const menuToggle = document.getElementById("mobile-menu-toggle");
+            const langToggle = document.getElementById("mobile-lang-toggle");
+            const menuPanel = document.getElementById("mobile-menu");
+            const langPanel = document.getElementById("mobile-lang");
+
+            function closePanel(panel) {
+                if (panel && !panel.classList.contains("hidden")) {
+                    panel.classList.add("hidden");
+                }
+            }
+
+            menuToggle && menuToggle.addEventListener("click", function() {
+                if (!menuPanel) return;
+                menuPanel.classList.toggle("hidden");
+                closePanel(langPanel);
+            });
+
+            langToggle && langToggle.addEventListener("click", function() {
+                if (!langPanel) return;
+                langPanel.classList.toggle("hidden");
+                closePanel(menuPanel);
+            });
+
+            document.addEventListener("click", function(event) {
+                const target = event.target;
+                const isToggle = menuToggle && menuToggle.contains(target) || langToggle && langToggle.contains(target);
+                const isPanel = menuPanel && menuPanel.contains(target) || langPanel && langPanel.contains(target);
+                if (!isToggle && !isPanel) {
+                    closePanel(menuPanel);
+                    closePanel(langPanel);
+                }
+            });
+        })();
+    </script>
     <script>lucide.createIcons();</script>
     <script src="https://app.contactbutton.com/script/f9179d71a69db1d708e6c0da599ed485" async="async"></script>
 </body>
