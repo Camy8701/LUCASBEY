@@ -37,7 +37,12 @@
             white-space: nowrap;
         }
         .hero-typewriter-multiline {
-            white-space: pre-line;
+            white-space: nowrap;
+        }
+        @media (max-width: 640px) {
+            .hero-typewriter-multiline {
+                white-space: pre-line;
+            }
         }
         .hero-accent-note {
             animation: note-float 2.6s ease-in-out infinite;
