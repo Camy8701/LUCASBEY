@@ -148,7 +148,7 @@
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-12">
             <div class="max-w-3xl">
                 <h1 class="hero-title font-['DM_Serif_Display'] text-[#202a2d] text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8">
-                    <span id="hero-typewriter" class="hero-typewriter hero-typewriter-multiline" data-text="Votre corps\\nest">Votre corps est</span><span class="hero-cursor" aria-hidden="true"></span> <br><span class="italic font-normal opacity-80">entre de bonnes mains</span>
+                    <span id="hero-typewriter" class="hero-typewriter hero-typewriter-multiline" data-text="Votre corps|est">Votre corps est</span><span class="hero-cursor" aria-hidden="true"></span> <br><span class="italic font-normal opacity-80">entre de bonnes mains</span>
                 </h1>
                 <p class="hero-subtitle text-lg md:text-xl text-[#202a2d]/80 leading-relaxed max-w-2xl font-light">
                     Kinésithérapie experte au cœur du Luxembourg. Notre équipe de kinésithérapeutes dévoués vous offre des soins personnalisés pour mieux bouger, vous sentir plus fort et vivre pleinement.
@@ -317,9 +317,9 @@
 
     <script>
         (function() {
-            const typeSpeed = 100;
-            const deleteSpeed = 50;
-            const pauseTime = 2000;
+            const typeSpeed = 130;
+            const deleteSpeed = 65;
+            const pauseTime = 2200;
 
             function createTypewriter(elementId) {
                 const element = document.getElementById(elementId);
@@ -328,7 +328,9 @@
                     return;
                 }
 
-                const text = element.dataset.text ? element.dataset.text.replace(/\\n/g, "\n") : element.textContent.trim();
+                const text = element.dataset.text
+                    ? element.dataset.text.replace(/\\n/g, "\n").replace(/\|/g, "\n")
+                    : element.textContent.trim();
                 let charIndex = 0;
                 let isDeleting = false;
 
