@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Léa Triole - LËTZ PHYSIO</title>
+    <title>Cécile Gasparini - LËTZ PHYSIO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,16 +21,16 @@
     <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/90 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between relative">
         <a href="index.html" class="flex items-center gap-2 sm:gap-3 select-none cursor-pointer group min-w-0">
             <img src="assets/logo.png" alt="LËTZ PHYSIO" class="h-12 w-12 sm:h-[70px] sm:w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
-            <span class="font-['DM_Serif_Display'] text-base sm:text-xl md:text-2xl text-white tracking-tight leading-none truncate max-w-[140px] sm:max-w-none">Lëtz Physio</span>
+            <span class="font-['DM_Serif_Display'] text-base sm:text-xl md:text-2xl text-white tracking-tight leading-none truncate max-w-[140px] sm:max-w-none">{{CLINIC_NAME}}</span>
         </a>
 
         <nav class="hidden lg:flex text-sm font-light text-stone-100 tracking-wide gap-x-3 gap-y-3 items-center">
-            <a href="index.html" class="nav-pill nav-pill-green">Startseite</a>
-            <a href="leistungen.html" class="nav-pill nav-pill-beige">Leistungen</a>
+            <a href="index.html" class="nav-pill nav-pill-green">Accueil</a>
+            <a href="services.html" class="nav-pill nav-pill-beige">Services</a>
             <a href="faq.html" class="nav-pill nav-pill-green">FAQ</a>
 
             <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
-                <span>Team</span>
+                <span>Équipe</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
                 <div class="absolute top-full left-0 pt-6 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
                     <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
@@ -42,17 +42,17 @@
                 </div>
             </div>
 
-            <a href="kontakt.html" class="nav-pill nav-pill-green">Kontakt</a>
+            <a href="contact.html" class="nav-pill nav-pill-green">Contact</a>
 
             <!-- Language Dropdown -->
             <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
-                <span>🇩🇪 DE</span>
+                <span>🇫🇷 FR</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
                 <div class="absolute top-full right-0 pt-6 w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
                     <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
-                        <a href="../lea.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
-                        <a href="lea.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
-                        <a href="../en/lea.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
+                        <a href="cecile.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
+                        <a href="de/cecile.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
+                        <a href="en/cecile.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
                     </div>
                 </div>
             </div>
@@ -61,25 +61,25 @@
 
         <div class="flex lg:hidden items-center gap-2 shrink-0">
             
-            <button id="mobile-menu-toggle" class="nav-pill nav-pill-green px-3 py-2 text-xs uppercase tracking-widest">Menü</button>
-            <button id="mobile-lang-toggle" class="nav-pill nav-pill-beige px-3 py-2 text-xs uppercase tracking-widest">Sprache</button>
+            <button id="mobile-menu-toggle" class="nav-pill nav-pill-green px-3 py-2 text-xs uppercase tracking-widest">Menu</button>
+            <button id="mobile-lang-toggle" class="nav-pill nav-pill-beige px-3 py-2 text-xs uppercase tracking-widest">Langue</button>
         </div>
 
         <div class="flex gap-6 items-center">
-            <a href="kontakt.html" class="hidden md:block uppercase hover:bg-[#3d4d41] hover:border-stone-400 transition-all duration-300 text-xs font-medium text-white tracking-[0.15em] bg-[#4A5D4F]/80 border-[#647a6a] border rounded-sm pt-3 pr-6 pb-3 pl-6 shadow-xl backdrop-blur-md">
-                Termin buchen
+            <a href="contact.html" class="hidden md:block uppercase hover:bg-[#3d4d41] hover:border-stone-400 transition-all duration-300 text-xs font-medium text-white tracking-[0.15em] bg-[#4A5D4F]/80 border-[#647a6a] border rounded-sm pt-3 pr-6 pb-3 pl-6 shadow-xl backdrop-blur-md">
+                Prendre rendez-vous
             </a>
         </div>
 
         <div id="mobile-menu" class="absolute top-full left-0 w-full lg:hidden hidden">
             <div class="mx-6 md:mx-12 mt-4 mb-6 bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm p-4 text-stone-100">
                 <div class="flex flex-col gap-2">
-                    <a href="index.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Startseite</a>
-                    <a href="leistungen.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Leistungen</a>
+                    <a href="index.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Accueil</a>
+                    <a href="services.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Services</a>
                     <a href="faq.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">FAQ</a>
-                    <a href="kontakt.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Kontakt</a>
+                    <a href="contact.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Contact</a>
                     <div class="border-t border-white/10 pt-3 mt-2">
-                        <p class="px-4 text-xs uppercase tracking-widest text-stone-400 mb-2">Team</p>
+                        <p class="px-4 text-xs uppercase tracking-widest text-stone-400 mb-2">Équipe</p>
                         <div class="flex flex-col">
                             <a href="arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Arthur Menzies</a>
                             <a href="cecile.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Cécile Gasparini</a>
@@ -87,8 +87,8 @@
                             <a href="lea.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Léa Triole</a>
                         </div>
                     </div>
-                    <a href="kontakt.html" class="mt-4 inline-flex items-center justify-center gap-2 bg-[#cbd0b5] text-[#202a2d] px-6 py-3 rounded-full text-xs uppercase tracking-widest font-semibold hover:bg-white transition-colors">
-                        Termin buchen <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
+                    <a href="contact.html" class="mt-4 inline-flex items-center justify-center gap-2 bg-[#cbd0b5] text-[#202a2d] px-6 py-3 rounded-full text-xs uppercase tracking-widest font-semibold hover:bg-white transition-colors">
+                        Prendre rendez-vous <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
                     </a>
                 </div>
             </div>
@@ -98,9 +98,9 @@
         <div id="mobile-lang" class="absolute top-full left-0 w-full lg:hidden hidden">
             <div class="mx-6 md:mx-12 mt-4 mb-6 bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm p-4 text-stone-100">
                 <div class="flex flex-col">
-                    <a href="../lea.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
-                    <a href="lea.html" class="px-4 py-2 text-xs uppercase tracking-widest text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
-                    <a href="../en/lea.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
+                    <a href="cecile.html" class="px-4 py-2 text-xs uppercase tracking-widest text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
+                    <a href="de/cecile.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
+                    <a href="en/cecile.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
                 </div>
             </div>
         </div>
@@ -109,7 +109,7 @@
     <!-- Back Link -->
     <div class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-36">
         <a href="team.html" class="inline-flex items-center gap-2 text-sm uppercase tracking-widest font-medium text-[#202a2d]/70 hover:text-[#202a2d] transition-colors">
-            <i data-lucide="arrow-left" class="w-4 h-4 stroke-[1.5]"></i> Zurück zum Team
+            <i data-lucide="arrow-left" class="w-4 h-4 stroke-[1.5]"></i> Retour à l'équipe
         </a>
     </div>
 
@@ -119,40 +119,40 @@
 
             <!-- Photo -->
             <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                <img src="../assets/Léa Triole.jpg" alt="Léa Triole" class="w-full h-full object-cover">
+                <img src="assets/Cecile Gasparini.jpg" alt="Cécile Gasparini" class="w-full h-full object-cover">
             </div>
 
             <!-- Info -->
             <div class="flex flex-col justify-center">
-                <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-4">Physiotherapeutin</span>
+                <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-4">Kinésithérapeute</span>
                 <h1 class="font-['DM_Serif_Display'] text-[#202a2d] text-5xl md:text-7xl tracking-tight leading-[0.9] mb-6">
-                    Léa <br><span class="italic font-normal opacity-80">Triole</span>
+                    Cécile <br><span class="italic font-normal opacity-80">Gasparini</span>
                 </h1>
                 <p class="text-lg md:text-xl text-[#202a2d]/80 leading-relaxed font-light mb-8">
-                    Als diplomierte Physiotherapeutin behandle ich verschiedene Erkrankungen von muskuloskelettalen Problemen bis hin zu postoperativer, neurologischer und respiratorischer Rehabilitation. Ich bin zertifiziert in der McKenzie-Methode (Teil A und B), einem anerkannten Ansatz zur Diagnose und Behandlung von Wirbelsäulenschmerzen.
+                    Kinésithérapeute diplômée, je pratique des séances de rééducation en orthopédie, traumatologie, neurologie et gériatrie. Je propose une prise en charge sur mesure qui allie les méthodes fondées sur des preuves scientifiques et les exigences particulières des patients afin de répondre au mieux à leurs besoins.
                 </p>
                 <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-8">
-                    Ich setze mich für eine personalisierte Betreuung ein und kombiniere die neuesten wissenschaftlichen Erkenntnisse mit aufmerksamem Zuhören für die Bedürfnisse jedes Patienten.
+                    J'accorde une grande importance à l'écoute empathique de mes patients et à la formulation de leurs objectifs dans le but d'assurer un soutien approprié. Afin de répondre au mieux à leurs attentes, je continue ma formation de manière régulière.
                 </p>
 
                 <div class="space-y-6 mb-10">
                     <div>
-                        <h3 class="font-semibold text-sm uppercase tracking-widest text-[#202a2d]/70 mb-3">Spezialisierungen</h3>
+                        <h3 class="font-semibold text-sm uppercase tracking-widest text-[#202a2d]/70 mb-3">Spécialisations</h3>
                         <div class="flex flex-wrap gap-3">
-                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">McKenzie-Methode</span>
-                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Muskuloskelettal</span>
-                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Postoperativ</span>
+                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Orthopédie</span>
+                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Traumatologie</span>
                             <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Neurologie</span>
+                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Gériatrie</span>
                         </div>
                     </div>
                     <div>
-                        <h3 class="font-semibold text-sm uppercase tracking-widest text-[#202a2d]/70 mb-3">Sprachen</h3>
-                        <p class="text-[#202a2d]/80 font-light">Französisch, Englisch</p>
+                        <h3 class="font-semibold text-sm uppercase tracking-widest text-[#202a2d]/70 mb-3">Langues</h3>
+                        <p class="text-[#202a2d]/80 font-light">Français, Anglais</p>
                     </div>
                 </div>
 
-                <a href="kontakt.html" class="inline-flex items-center gap-3 bg-[#202a2d] text-[#cbd0b5] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-[#202a2d]/80 transition-colors w-fit">
-                    Termin mit Léa <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
+                <a href="contact.html" class="inline-flex items-center gap-3 bg-[#202a2d] text-[#cbd0b5] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-[#202a2d]/80 transition-colors w-fit">
+                    Réserver avec Cécile <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
                 </a>
             </div>
 
@@ -163,32 +163,14 @@
     <section class="w-full px-4 md:px-12 mb-12">
         <div class="w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-[#202a2d]/20 p-8 md:p-16">
             <div class="max-w-3xl">
-                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#202a2d] tracking-tight mb-8">Diplome & Weiterbildungen</h2>
+                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#202a2d] tracking-tight mb-8">Diplômes & Formations</h2>
                 <ul class="space-y-4">
                     <li class="flex gap-4">
                         <div class="w-2 h-2 rounded-full bg-[#202a2d] mt-3 shrink-0"></div>
                         <div>
                             <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
-                                <strong class="font-medium">McKenzie-Methode - Teil A</strong><br>
-                                Mechanische Diagnose und Therapie der Lendenwirbelsäule
-                            </p>
-                        </div>
-                    </li>
-                    <li class="flex gap-4">
-                        <div class="w-2 h-2 rounded-full bg-[#202a2d] mt-3 shrink-0"></div>
-                        <div>
-                            <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
-                                <strong class="font-medium">McKenzie-Methode - Teil B</strong><br>
-                                Fortgeschrittene mechanische Diagnose und Therapie der Lendenwirbelsäule
-                            </p>
-                        </div>
-                    </li>
-                    <li class="flex gap-4">
-                        <div class="w-2 h-2 rounded-full bg-[#202a2d] mt-3 shrink-0"></div>
-                        <div>
-                            <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
-                                <strong class="font-medium">Master in Physiotherapie</strong><br>
-                                Spezialisierung auf muskuloskelettale Rehabilitation
+                                <strong class="font-medium">Institut de thérapie manuelle et de physiothérapie</strong><br>
+                                100 exercices pour autonomiser les patients en rééducation des troubles musculosquelettiques. Formation par Major Mouvement, 22/05/2025
                             </p>
                         </div>
                     </li>
@@ -201,12 +183,12 @@
     <section class="w-full px-4 md:px-12 mb-24">
         <div class="w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-[#202a2d] p-8 md:p-16">
             <div class="max-w-3xl">
-                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#cbd0b5] tracking-tight mb-6">Patientenbewertungen</h2>
+                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#cbd0b5] tracking-tight mb-6">Retours d'expérience</h2>
                 <p class="text-lg text-[#cbd0b5]/80 leading-relaxed font-light mb-8">
-                    Entdecken Sie die Bewertungen meiner Patienten auf Doctena und teilen Sie Ihre eigene Erfahrung nach Ihrer Konsultation.
+                    Découvrez les avis de mes patients sur Doctena et partagez votre propre expérience après votre consultation.
                 </p>
-                <a href="https://www.doctena.lu/fr/specialite/kinesitherapeute/lea-triole-2094843/feedback" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-[#cbd0b5] text-[#202a2d] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-white transition-colors">
-                    Bewertungen auf Doctena ansehen <i data-lucide="external-link" class="w-4 h-4 stroke-[2]"></i>
+                <a href="https://www.doctena.lu/fr/specialite/kinesitherapeute/cecile-gasparini-1934773/feedback" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-[#cbd0b5] text-[#202a2d] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-white transition-colors">
+                    Voir les avis sur Doctena <i data-lucide="external-link" class="w-4 h-4 stroke-[2]"></i>
                 </a>
             </div>
         </div>
@@ -218,13 +200,13 @@
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <a href="index.html" class="flex items-center gap-3">
                     <img src="assets/logo.png" alt="LËTZ PHYSIO" class="h-10 rounded-full">
-                    <span class="font-['DM_Serif_Display'] text-3xl">Lëtz Physio</span>
+                    <span class="font-['DM_Serif_Display'] text-3xl">{{CLINIC_NAME}}</span>
                 </a>
                 <div class="flex gap-8 text-sm font-light">
-                    <a href="leistungen.html" class="hover:text-white transition-colors">Leistungen</a>
-                    <a href="team.html" class="hover:text-white transition-colors">Team</a>
+                    <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                    <a href="team.html" class="hover:text-white transition-colors">Équipe</a>
                     <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
-                    <a href="kontakt.html" class="hover:text-white transition-colors">Kontakt</a>
+                    <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
                 </div>
                 <p class="text-xs opacity-60 uppercase tracking-widest">&copy; 2024 LËTZ PHYSIO</p>
             </div>

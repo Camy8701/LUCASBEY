@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LËTZ PHYSIO - Your body is in good hands</title>
+    <title>LËTZ PHYSIO - Votre corps est entre de bonnes mains</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
     <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .nav-pill { padding: 0.4rem 1rem; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.45); display: inline-flex; align-items: center; gap: 0.35rem; color: rgba(255,255,255,0.95); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.05em; transition: all 0.3s ease; text-decoration: none; }
         .nav-pill-green:hover { background: #2f6b4b; border-color: #2f6b4b; color: #fff; box-shadow: 0 10px 20px rgba(47,107,75,0.25); transform: translateY(-1px); }
         .nav-pill-beige:hover { background: #f2e6d0; border-color: #f2e6d0; color: #2f3a2f; box-shadow: 0 10px 20px rgba(242,230,208,0.35); transform: translateY(-1px); }
@@ -21,10 +23,8 @@
             display: inline-block;
             vertical-align: bottom;
         }
-        .hero-typewriter-singleline {
-            white-space: nowrap;
-        }
-        .hero-cursor {
+        .hero-typewriter::after {
+            content: "";
             display: inline-block;
             width: 3px;
             height: 0.9em;
@@ -33,9 +33,28 @@
             vertical-align: -0.1em;
             animation: blink-cursor 0.75s step-end infinite;
         }
+        .hero-typewriter-singleline {
+            white-space: nowrap;
+        }
+        .hero-typewriter-multiline {
+            white-space: nowrap;
+        }
+        @media (max-width: 640px) {
+            .hero-typewriter-multiline {
+                white-space: pre-line;
+            }
+        }
+        .hero-accent-note {
+            animation: note-float 2.6s ease-in-out infinite;
+            display: inline-block;
+        }
         @keyframes blink-cursor {
             from, to { opacity: 0; }
             50% { opacity: 1; }
+        }
+        @keyframes note-float {
+            0%, 100% { transform: translateY(0) rotate(-1deg); }
+            50% { transform: translateY(-8px) rotate(1.5deg); }
         }
     </style>
 </head>
@@ -45,23 +64,23 @@
     <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/90 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between relative">
         <a href="index.html" class="flex items-center gap-2 sm:gap-3 select-none cursor-pointer group min-w-0">
             <img src="assets/logo.png" alt="LËTZ PHYSIO" class="h-12 w-12 sm:h-[70px] sm:w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
-            <span class="font-['DM_Serif_Display'] text-base sm:text-xl md:text-2xl text-white tracking-tight leading-none truncate max-w-[140px] sm:max-w-none">Lëtz Physio</span>
+            <span class="font-['DM_Serif_Display'] text-base sm:text-xl md:text-2xl text-white tracking-tight leading-none truncate max-w-[140px] sm:max-w-none">{{CLINIC_NAME}}</span>
         </a>
 
         <nav class="hidden lg:flex text-sm font-light text-stone-100 tracking-wide gap-x-3 gap-y-3 items-center">
-            <a href="index.html" class="nav-pill nav-pill-green">Home</a>
+            <a href="index.html" class="nav-pill nav-pill-green">Accueil</a>
             <a href="services.html" class="nav-pill nav-pill-beige">Services</a>
             <a href="faq.html" class="nav-pill nav-pill-green">FAQ</a>
 
             <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
-                <span>Team</span>
+                <span>Équipe</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
                 <div class="absolute top-full left-0 pt-6 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
                     <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
                         <a href="arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Arthur Menzies</a>
-                        <a href="cecile.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Cecile Gasparini</a>
-                        <a href="lais.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Lais Carneiro</a>
-                        <a href="lea.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Lea Triole</a>
+                        <a href="cecile.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Cécile Gasparini</a>
+                        <a href="lais.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Laïs Carneiro</a>
+                        <a href="lea.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Léa Triole</a>
                     </div>
                 </div>
             </div>
@@ -70,13 +89,13 @@
 
             <!-- Language Dropdown -->
             <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
-                <span>&#127468;&#127463; EN</span>
+                <span>🇫🇷 FR</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
                 <div class="absolute top-full right-0 pt-6 w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
                     <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
-                        <a href="../index.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">&#127467;&#127479; Francais</a>
-                        <a href="../de/index.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">&#127465;&#127466; Deutsch</a>
-                        <a href="index.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">&#127468;&#127463; English</a>
+                        <a href="index.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
+                        <a href="de/index.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
+                        <a href="en/index.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
                     </div>
                 </div>
             </div>
@@ -86,24 +105,24 @@
         <div class="flex lg:hidden items-center gap-2 shrink-0">
             
             <button id="mobile-menu-toggle" class="nav-pill nav-pill-green px-3 py-2 text-xs uppercase tracking-widest">Menu</button>
-            <button id="mobile-lang-toggle" class="nav-pill nav-pill-beige px-3 py-2 text-xs uppercase tracking-widest">Lang</button>
+            <button id="mobile-lang-toggle" class="nav-pill nav-pill-beige px-3 py-2 text-xs uppercase tracking-widest">Langue</button>
         </div>
 
         <div class="flex gap-6 items-center">
             <a href="contact.html" class="hidden md:block uppercase hover:bg-[#3d4d41] hover:border-stone-400 transition-all duration-300 text-xs font-medium text-white tracking-[0.15em] bg-[#4A5D4F]/80 border-[#647a6a] border rounded-sm pt-3 pr-6 pb-3 pl-6 shadow-xl backdrop-blur-md">
-                Book Appointment
+                Prendre rendez-vous
             </a>
         </div>
 
         <div id="mobile-menu" class="absolute top-full left-0 w-full lg:hidden hidden">
             <div class="mx-6 md:mx-12 mt-4 mb-6 bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm p-4 text-stone-100">
                 <div class="flex flex-col gap-2">
-                    <a href="index.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Home</a>
+                    <a href="index.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Accueil</a>
                     <a href="services.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Services</a>
                     <a href="faq.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">FAQ</a>
                     <a href="contact.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Contact</a>
                     <div class="border-t border-white/10 pt-3 mt-2">
-                        <p class="px-4 text-xs uppercase tracking-widest text-stone-400 mb-2">Team</p>
+                        <p class="px-4 text-xs uppercase tracking-widest text-stone-400 mb-2">Équipe</p>
                         <div class="flex flex-col">
                             <a href="arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Arthur Menzies</a>
                             <a href="cecile.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Cécile Gasparini</a>
@@ -112,7 +131,7 @@
                         </div>
                     </div>
                     <a href="contact.html" class="mt-4 inline-flex items-center justify-center gap-2 bg-[#cbd0b5] text-[#202a2d] px-6 py-3 rounded-full text-xs uppercase tracking-widest font-semibold hover:bg-white transition-colors">
-                        Book Appointment <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
+                        Prendre rendez-vous <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
                     </a>
                 </div>
             </div>
@@ -122,9 +141,9 @@
         <div id="mobile-lang" class="absolute top-full left-0 w-full lg:hidden hidden">
             <div class="mx-6 md:mx-12 mt-4 mb-6 bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm p-4 text-stone-100">
                 <div class="flex flex-col">
-                    <a href="../index.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
-                    <a href="../de/index.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
-                    <a href="index.html" class="px-4 py-2 text-xs uppercase tracking-widest text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
+                    <a href="index.html" class="px-4 py-2 text-xs uppercase tracking-widest text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
+                    <a href="de/index.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
+                    <a href="en/index.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
                 </div>
             </div>
         </div>
@@ -135,14 +154,14 @@
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-12">
             <div class="max-w-3xl">
                 <h1 class="hero-title font-['DM_Serif_Display'] text-[#202a2d] text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8">
-                    <span id="hero-typewriter" class="hero-typewriter hero-typewriter-singleline">your body is</span><span class="hero-cursor" aria-hidden="true"></span> <br><span class="italic font-normal opacity-80">in good hands</span>
+                    <span id="hero-typewriter" class="hero-typewriter hero-typewriter-multiline">Votre corps est</span> <br><span class="italic font-normal opacity-80">entre de bonnes mains</span>
                 </h1>
                 <p class="hero-subtitle text-lg md:text-xl text-[#202a2d]/80 leading-relaxed max-w-2xl font-light">
-                    Expert physiotherapy in the heart of Luxembourg. Our team of dedicated physiotherapists offers personalised care to help you move better, feel stronger, and live fully.
+                    Kinésithérapie experte au cœur du Luxembourg. Notre équipe de kinésithérapeutes dévoués vous offre des soins personnalisés pour mieux bouger, vous sentir plus fort et vivre pleinement.
                 </p>
             </div>
             <div class="hero-accent hidden md:block rotate-[-6deg] translate-y-[-2rem]">
-                <p class="font-['Reenie_Beanie'] text-[#202a2d] text-4xl">book an appointment</p>
+                <p class="hero-accent-note font-['Reenie_Beanie'] text-[#202a2d] text-4xl">prenez rendez-vous</p>
                 <i data-lucide="arrow-down-right" class="text-[#202a2d] w-8 h-8 ml-8 mt-2 stroke-[1.5]"></i>
             </div>
         </div>
@@ -151,9 +170,9 @@
     <!-- Hero Image -->
     <section class="w-full px-4 md:px-12 mb-24 md:mb-32">
         <div class="relative w-full h-[50vh] md:h-[75vh] overflow-hidden rounded-[2rem] md:rounded-[3rem]">
-            <img src="assets/hero.png" alt="LETZ PHYSIO Practice" class="absolute inset-0 w-full h-full object-cover">
+            <img src="assets/hero.png" alt="Cabinet LËTZ PHYSIO" class="absolute inset-0 w-full h-full object-cover">
             <div class="absolute bottom-0 left-0 w-full p-6 md:p-12 bg-gradient-to-t from-[#202a2d]/80 to-transparent">
-                <span class="text-[#cbd0b5] font-['DM_Serif_Display'] text-3xl md:text-5xl tracking-tight">Welcome to our practice</span>
+                <span class="text-[#cbd0b5] font-['DM_Serif_Display'] text-3xl md:text-5xl tracking-tight">Bienvenue au cabinet</span>
             </div>
         </div>
     </section>
@@ -162,55 +181,55 @@
     <section class="w-full max-w-7xl mx-auto px-6 md:px-12 mb-32">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
             <h2 class="font-['DM_Serif_Display'] text-[#202a2d] text-5xl md:text-7xl tracking-tight leading-[0.9]">
-                our <br><span class="italic font-normal opacity-80">expertise</span>
+                notre <br><span class="italic font-normal opacity-80">expertise</span>
             </h2>
             <a href="services.html" class="mt-6 md:mt-0 text-sm uppercase tracking-widest font-medium hover:opacity-60 transition-opacity flex items-center gap-2">
-                All services <i data-lucide="arrow-right" class="w-4 h-4 stroke-[1.5]"></i>
+                Tous les services <i data-lucide="arrow-right" class="w-4 h-4 stroke-[1.5]"></i>
             </a>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
             <a href="services.html" class="flex flex-col gap-6 group">
                 <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1000&auto=format&fit=crop" alt="Back and Joints Rehabilitation" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1000&auto=format&fit=crop" alt="Rééducation dos et articulations" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
                 </div>
                 <div>
                     <div class="flex items-baseline justify-between mb-2">
-                        <h3 class="font-['DM_Serif_Display'] text-4xl text-[#202a2d] tracking-tight">Back & Joints</h3>
-                        <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium">Rehabilitation</span>
+                        <h3 class="font-['DM_Serif_Display'] text-4xl text-[#202a2d] tracking-tight">Dos & Articulations</h3>
+                        <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium">Rééducation</span>
                     </div>
                     <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
-                        Specialised rehabilitation for back pain and joint disorders. Restore your mobility and relieve chronic pain.
+                        Rééducation spécialisée pour les douleurs dorsales et les troubles articulaires. Restaurez votre mobilité et soulagez la douleur chronique.
                     </p>
                 </div>
             </a>
 
             <a href="services.html" class="flex flex-col gap-6 group">
                 <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1000&auto=format&fit=crop" alt="Sports Physiotherapy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1000&auto=format&fit=crop" alt="Kinésithérapie sportive" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
                 </div>
                 <div>
                     <div class="flex items-baseline justify-between mb-2">
-                        <h3 class="font-['DM_Serif_Display'] text-4xl text-[#202a2d] tracking-tight">Sports</h3>
+                        <h3 class="font-['DM_Serif_Display'] text-4xl text-[#202a2d] tracking-tight">Sport</h3>
                         <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium">Performance</span>
                     </div>
                     <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
-                        Sports performance optimisation and post-injury recovery. Get back to your best level safely.
+                        Optimisation des performances sportives et récupération après blessure. Retrouvez votre meilleur niveau en toute sécurité.
                     </p>
                 </div>
             </a>
 
             <a href="services.html" class="flex flex-col gap-6 group">
                 <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1000&auto=format&fit=crop" alt="Lymphatic Drainage" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1000&auto=format&fit=crop" alt="Drainage lymphatique" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
                 </div>
                 <div>
                     <div class="flex items-baseline justify-between mb-2">
                         <h3 class="font-['DM_Serif_Display'] text-4xl text-[#202a2d] tracking-tight">Drainage</h3>
-                        <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium">Lymphatic</span>
+                        <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium">Lymphatique</span>
                     </div>
                     <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
-                        Gentle manual lymphatic drainage to reduce swelling, boost immunity, and promote healing.
+                        Drainage lymphatique manuel doux pour réduire les gonflements, renforcer l'immunité et favoriser la guérison.
                     </p>
                 </div>
             </a>
@@ -222,14 +241,14 @@
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
             <div>
                 <h2 class="font-['DM_Serif_Display'] text-[#202a2d] text-5xl md:text-7xl tracking-tight leading-[0.9] mb-4">
-                    meet the <br><span class="italic font-normal opacity-80">team</span>
+                    rencontrez <br><span class="italic font-normal opacity-80">l'équipe</span>
                 </h2>
                 <p class="text-lg text-[#202a2d]/80 font-light max-w-xl">
-                    Four dedicated physiotherapists speaking English, French, Spanish, and Portuguese to serve Luxembourg's diverse community.
+                    Quatre kinésithérapeutes dévoués parlant anglais, français, espagnol et portugais au service de la communauté diversifiée du Luxembourg.
                 </p>
             </div>
             <a href="team.html" class="mt-6 md:mt-0 text-sm uppercase tracking-widest font-medium hover:opacity-60 transition-opacity flex items-center gap-2">
-                Full team <i data-lucide="arrow-right" class="w-4 h-4 stroke-[1.5]"></i>
+                Toute l'équipe <i data-lucide="arrow-right" class="w-4 h-4 stroke-[1.5]"></i>
             </a>
         </div>
 
@@ -242,21 +261,21 @@
             </a>
             <a href="cecile.html" class="flex flex-col gap-4 group">
                 <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="assets/Cecile Gasparini.jpg" alt="Cecile Gasparini" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
+                    <img src="assets/Cecile Gasparini.jpg" alt="Cécile Gasparini" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
                 </div>
-                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight">Cecile</h3>
+                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight">Cécile</h3>
             </a>
             <a href="lais.html" class="flex flex-col gap-4 group">
                 <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="assets/Lais Carneiro.jpg" alt="Lais Carneiro" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
+                    <img src="assets/Lais Carneiro.jpg" alt="Laïs Carneiro" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
                 </div>
-                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight">Lais</h3>
+                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight">Laïs</h3>
             </a>
             <a href="lea.html" class="flex flex-col gap-4 group">
                 <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="assets/Léa Triole.jpg" alt="Lea Triole" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
+                    <img src="assets/Léa Triole.jpg" alt="Léa Triole" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
                 </div>
-                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight">Lea</h3>
+                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight">Léa</h3>
             </a>
         </div>
     </section>
@@ -266,19 +285,19 @@
         <div class="relative w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-[#202a2d] p-8 md:p-16 flex flex-col md:flex-row gap-12 items-center">
             <div class="flex-1">
                 <h2 class="font-['DM_Serif_Display'] text-[#cbd0b5] text-4xl md:text-6xl tracking-tight leading-[0.9] mb-6">
-                    visit our <br><span class="italic font-normal opacity-80">practice</span>
+                    visitez notre <br><span class="italic font-normal opacity-80">cabinet</span>
                 </h2>
                 <div class="text-[#cbd0b5]/80 font-light space-y-3 mb-8">
-                    <p class="flex items-center gap-3"><i data-lucide="map-pin" class="w-5 h-5 stroke-[1.5]"></i> 12 Rue Du Laboratoire, 1911 Luxembourg</p>
-                    <p class="flex items-center gap-3"><i data-lucide="phone" class="w-5 h-5 stroke-[1.5]"></i> +352 691 385 556</p>
-                    <p class="flex items-center gap-3"><i data-lucide="clock" class="w-5 h-5 stroke-[1.5]"></i> Monday - Friday: 08:00 - 19:00</p>
+                    <p class="flex items-center gap-3"><i data-lucide="map-pin" class="w-5 h-5 stroke-[1.5]"></i> {{ADDRESS_INLINE}}</p>
+                    <p class="flex items-center gap-3"><i data-lucide="phone" class="w-5 h-5 stroke-[1.5]"></i> {{PHONE_DISPLAY}}</p>
+                    <p class="flex items-center gap-3"><i data-lucide="clock" class="w-5 h-5 stroke-[1.5]"></i> Lundi – Vendredi : 08:00 – 19:00</p>
                 </div>
                 <a href="contact.html" class="inline-flex items-center gap-3 bg-[#cbd0b5] text-[#202a2d] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-white transition-colors">
-                    Book Appointment <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
+                    Prendre rendez-vous <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
                 </a>
             </div>
             <div class="flex-1 w-full aspect-square md:aspect-[4/3] rounded-[2rem] overflow-hidden">
-                <img src="../assets/salle.png" alt="LETZ PHYSIO Practice" class="w-full h-full object-cover">
+                <img src="assets/salle.png" alt="Cabinet LËTZ PHYSIO" class="w-full h-full object-cover">
             </div>
         </div>
     </section>
@@ -289,11 +308,11 @@
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <a href="index.html" class="flex items-center gap-3">
                     <img src="assets/logo.png" alt="LËTZ PHYSIO" class="h-10 rounded-full">
-                    <span class="font-['DM_Serif_Display'] text-3xl">Lëtz Physio</span>
+                    <span class="font-['DM_Serif_Display'] text-3xl">{{CLINIC_NAME}}</span>
                 </a>
                 <div class="flex gap-8 text-sm font-light">
                     <a href="services.html" class="hover:text-white transition-colors">Services</a>
-                    <a href="team.html" class="hover:text-white transition-colors">Team</a>
+                    <a href="team.html" class="hover:text-white transition-colors">Équipe</a>
                     <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
                     <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
                 </div>
@@ -304,48 +323,52 @@
 
     <script>
         (function() {
-            const elementId = "hero-typewriter";
-            const typeSpeed = 100;
-            const deleteSpeed = 50;
-            const pauseTime = 2000;
+            const typeSpeed = 170;
+            const deleteSpeed = 85;
+            const pauseTime = 2860;
 
-            let charIndex = 0;
-            let isDeleting = false;
-            const element = document.getElementById(elementId);
-            const text = element ? element.textContent.trim() : "";
-
-            function type() {
+            function createTypewriter(elementId) {
+                const element = document.getElementById(elementId);
                 if (!element) {
+                    console.error("No se encontró el elemento con ID: " + elementId);
                     return;
                 }
 
-                if (isDeleting) {
-                    element.textContent = text.substring(0, charIndex - 1);
-                    charIndex--;
-                } else {
-                    element.textContent = text.substring(0, charIndex + 1);
-                    charIndex++;
+                const rawText = element.textContent.trim();
+                let text = rawText;
+                if (window.matchMedia("(max-width: 640px)").matches) {
+                    text = rawText.replace(/\s+est$/, "\nest");
+                }
+                let charIndex = 0;
+                let isDeleting = false;
+
+                function type() {
+                    if (isDeleting) {
+                        element.textContent = text.substring(0, charIndex - 1);
+                        charIndex--;
+                    } else {
+                        element.textContent = text.substring(0, charIndex + 1);
+                        charIndex++;
+                    }
+
+                    let currentSpeed = isDeleting ? deleteSpeed : typeSpeed;
+
+                    if (!isDeleting && charIndex === text.length) {
+                        currentSpeed = pauseTime;
+                        isDeleting = true;
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        currentSpeed = 400;
+                    }
+
+                    setTimeout(type, currentSpeed);
                 }
 
-                let currentSpeed = isDeleting ? deleteSpeed : typeSpeed;
-
-                if (!isDeleting && charIndex === text.length) {
-                    currentSpeed = pauseTime;
-                    isDeleting = true;
-                } else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    currentSpeed = 400;
-                }
-
-                setTimeout(type, currentSpeed);
-            }
-
-            if (element) {
                 element.textContent = "";
                 type();
-            } else {
-                console.error("No se encontró el elemento con ID: " + elementId);
             }
+
+            createTypewriter("hero-typewriter");
         })();
     </script>
     <script>

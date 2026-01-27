@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,16 +21,16 @@
     <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/90 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between relative">
         <a href="index.html" class="flex items-center gap-2 sm:gap-3 select-none cursor-pointer group min-w-0">
             <img src="assets/logo.png" alt="LËTZ PHYSIO" class="h-12 w-12 sm:h-[70px] sm:w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
-            <span class="font-['DM_Serif_Display'] text-base sm:text-xl md:text-2xl text-white tracking-tight leading-none truncate max-w-[140px] sm:max-w-none">Lëtz Physio</span>
+            <span class="font-['DM_Serif_Display'] text-base sm:text-xl md:text-2xl text-white tracking-tight leading-none truncate max-w-[140px] sm:max-w-none">{{CLINIC_NAME}}</span>
         </a>
 
         <nav class="hidden lg:flex text-sm font-light text-stone-100 tracking-wide gap-x-3 gap-y-3 items-center">
-            <a href="index.html" class="nav-pill nav-pill-green">Home</a>
+            <a href="index.html" class="nav-pill nav-pill-green">Accueil</a>
             <a href="services.html" class="nav-pill nav-pill-beige">Services</a>
             <a href="faq.html" class="nav-pill nav-pill-green">FAQ</a>
 
             <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
-                <span>Team</span>
+                <span>Équipe</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
                 <div class="absolute top-full left-0 pt-6 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
                     <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
@@ -46,13 +46,13 @@
 
             <!-- Language Dropdown -->
             <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
-                <span>🇬🇧 EN</span>
+                <span>🇫🇷 FR</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
                 <div class="absolute top-full right-0 pt-6 w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
                     <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
-                        <a href="../arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
-                        <a href="../de/arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
-                        <a href="arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
+                        <a href="arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
+                        <a href="de/arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
+                        <a href="en/arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
                     </div>
                 </div>
             </div>
@@ -62,24 +62,24 @@
         <div class="flex lg:hidden items-center gap-2 shrink-0">
             
             <button id="mobile-menu-toggle" class="nav-pill nav-pill-green px-3 py-2 text-xs uppercase tracking-widest">Menu</button>
-            <button id="mobile-lang-toggle" class="nav-pill nav-pill-beige px-3 py-2 text-xs uppercase tracking-widest">Lang</button>
+            <button id="mobile-lang-toggle" class="nav-pill nav-pill-beige px-3 py-2 text-xs uppercase tracking-widest">Langue</button>
         </div>
 
         <div class="flex gap-6 items-center">
             <a href="contact.html" class="hidden md:block uppercase hover:bg-[#3d4d41] hover:border-stone-400 transition-all duration-300 text-xs font-medium text-white tracking-[0.15em] bg-[#4A5D4F]/80 border-[#647a6a] border rounded-sm pt-3 pr-6 pb-3 pl-6 shadow-xl backdrop-blur-md">
-                Book Appointment
+                Prendre rendez-vous
             </a>
         </div>
 
         <div id="mobile-menu" class="absolute top-full left-0 w-full lg:hidden hidden">
             <div class="mx-6 md:mx-12 mt-4 mb-6 bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm p-4 text-stone-100">
                 <div class="flex flex-col gap-2">
-                    <a href="index.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Home</a>
+                    <a href="index.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Accueil</a>
                     <a href="services.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Services</a>
                     <a href="faq.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">FAQ</a>
                     <a href="contact.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Contact</a>
                     <div class="border-t border-white/10 pt-3 mt-2">
-                        <p class="px-4 text-xs uppercase tracking-widest text-stone-400 mb-2">Team</p>
+                        <p class="px-4 text-xs uppercase tracking-widest text-stone-400 mb-2">Équipe</p>
                         <div class="flex flex-col">
                             <a href="arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Arthur Menzies</a>
                             <a href="cecile.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Cécile Gasparini</a>
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     <a href="contact.html" class="mt-4 inline-flex items-center justify-center gap-2 bg-[#cbd0b5] text-[#202a2d] px-6 py-3 rounded-full text-xs uppercase tracking-widest font-semibold hover:bg-white transition-colors">
-                        Book Appointment <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
+                        Prendre rendez-vous <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
                     </a>
                 </div>
             </div>
@@ -98,9 +98,9 @@
         <div id="mobile-lang" class="absolute top-full left-0 w-full lg:hidden hidden">
             <div class="mx-6 md:mx-12 mt-4 mb-6 bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm p-4 text-stone-100">
                 <div class="flex flex-col">
-                    <a href="../arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
-                    <a href="../de/arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
-                    <a href="arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
+                    <a href="arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
+                    <a href="de/arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
+                    <a href="en/arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
                 </div>
             </div>
         </div>
@@ -109,7 +109,7 @@
     <!-- Back Link -->
     <div class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-36">
         <a href="team.html" class="inline-flex items-center gap-2 text-sm uppercase tracking-widest font-medium text-[#202a2d]/70 hover:text-[#202a2d] transition-colors">
-            <i data-lucide="arrow-left" class="w-4 h-4 stroke-[1.5]"></i> Back to team
+            <i data-lucide="arrow-left" class="w-4 h-4 stroke-[1.5]"></i> Retour à l'équipe
         </a>
     </div>
 
@@ -119,37 +119,37 @@
 
             <!-- Photo -->
             <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                <img src="../assets/Arthur Menzies.jpg" alt="Arthur Menzies" class="w-full h-full object-cover">
+                <img src="assets/Arthur Menzies.jpg" alt="Arthur Menzies" class="w-full h-full object-cover">
             </div>
 
             <!-- Info -->
             <div class="flex flex-col justify-center">
-                <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-4">Physiotherapist</span>
+                <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-4">Kinésithérapeute</span>
                 <h1 class="font-['DM_Serif_Display'] text-[#202a2d] text-5xl md:text-7xl tracking-tight leading-[0.9] mb-6">
                     Arthur <br><span class="italic font-normal opacity-80">Menzies</span>
                 </h1>
                 <p class="text-lg md:text-xl text-[#202a2d]/80 leading-relaxed font-light mb-8">
-                    Arthur specializes in sports rehabilitation and musculoskeletal therapy. With a passion for helping athletes and active individuals recover from injuries, he combines evidence-based manual techniques with targeted exercise programs to restore function and prevent recurrence.
+                    Arthur est spécialisé dans la rééducation sportive et la thérapie musculo-squelettique. Passionné par l'accompagnement des sportifs et des personnes actives dans leur récupération, il combine des techniques manuelles basées sur les preuves avec des programmes d'exercices ciblés pour restaurer la fonction et prévenir les récidives.
                 </p>
 
                 <div class="space-y-6 mb-10">
                     <div>
-                        <h3 class="font-semibold text-sm uppercase tracking-widest text-[#202a2d]/70 mb-3">Specializations</h3>
+                        <h3 class="font-semibold text-sm uppercase tracking-widest text-[#202a2d]/70 mb-3">Spécialisations</h3>
                         <div class="flex flex-wrap gap-3">
-                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Sports Injuries</span>
-                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Musculoskeletal</span>
-                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Rehabilitation</span>
-                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Manual Therapy</span>
+                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Blessures sportives</span>
+                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Musculo-squelettique</span>
+                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Rééducation</span>
+                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Thérapie manuelle</span>
                         </div>
                     </div>
                     <div>
-                        <h3 class="font-semibold text-sm uppercase tracking-widest text-[#202a2d]/70 mb-3">Languages</h3>
-                        <p class="text-[#202a2d]/80 font-light">English, French</p>
+                        <h3 class="font-semibold text-sm uppercase tracking-widest text-[#202a2d]/70 mb-3">Langues</h3>
+                        <p class="text-[#202a2d]/80 font-light">Anglais, Français</p>
                     </div>
                 </div>
 
                 <a href="contact.html" class="inline-flex items-center gap-3 bg-[#202a2d] text-[#cbd0b5] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-[#202a2d]/80 transition-colors w-fit">
-                    Book with Arthur <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
+                    Réserver avec Arthur <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
                 </a>
             </div>
 
@@ -160,12 +160,12 @@
     <section class="w-full px-4 md:px-12 mb-12">
         <div class="w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-[#202a2d]/20 p-8 md:p-16">
             <div class="max-w-3xl">
-                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#202a2d] tracking-tight mb-6">Treatment Approach</h2>
+                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#202a2d] tracking-tight mb-6">Approche thérapeutique</h2>
                 <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
-                    Arthur believes in a holistic approach to rehabilitation, addressing not just the symptoms but the root cause of dysfunction. Each treatment plan is individualized, combining hands-on therapy with progressive exercise prescription.
+                    Arthur croit en une approche holistique de la rééducation, traitant non seulement les symptômes mais aussi la cause profonde des dysfonctionnements. Chaque plan de traitement est individualisé, combinant thérapie manuelle et prescription d'exercices progressifs.
                 </p>
                 <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
-                    Whether you're recovering from a sports injury, managing chronic pain, or looking to improve your physical performance, Arthur works with you to set realistic goals and track your progress every step of the way.
+                    Que vous récupériez d'une blessure sportive, gériez une douleur chronique ou cherchiez à améliorer vos performances physiques, Arthur travaille avec vous pour définir des objectifs réalistes et suivre vos progrès à chaque étape.
                 </p>
             </div>
         </div>
@@ -175,12 +175,12 @@
     <section class="w-full px-4 md:px-12 mb-24">
         <div class="w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-[#202a2d] p-8 md:p-16">
             <div class="max-w-3xl">
-                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#cbd0b5] tracking-tight mb-6">Patient Feedback</h2>
+                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#cbd0b5] tracking-tight mb-6">Retours d'expérience</h2>
                 <p class="text-lg text-[#cbd0b5]/80 leading-relaxed font-light mb-8">
-                    Discover my patients' reviews on Doctena and share your own experience after your consultation.
+                    Découvrez les avis de mes patients sur Doctena et partagez votre propre expérience après votre consultation.
                 </p>
                 <a href="https://www.doctena.lu/fr/specialite/kinesitherapeute/arthur-menzies-2042263/feedback" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-[#cbd0b5] text-[#202a2d] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-white transition-colors">
-                    View reviews on Doctena <i data-lucide="external-link" class="w-4 h-4 stroke-[2]"></i>
+                    Voir les avis sur Doctena <i data-lucide="external-link" class="w-4 h-4 stroke-[2]"></i>
                 </a>
             </div>
         </div>
@@ -192,11 +192,11 @@
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <a href="index.html" class="flex items-center gap-3">
                     <img src="assets/logo.png" alt="LËTZ PHYSIO" class="h-10 rounded-full">
-                    <span class="font-['DM_Serif_Display'] text-3xl">Lëtz Physio</span>
+                    <span class="font-['DM_Serif_Display'] text-3xl">{{CLINIC_NAME}}</span>
                 </a>
                 <div class="flex gap-8 text-sm font-light">
                     <a href="services.html" class="hover:text-white transition-colors">Services</a>
-                    <a href="team.html" class="hover:text-white transition-colors">Team</a>
+                    <a href="team.html" class="hover:text-white transition-colors">Équipe</a>
                     <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
                     <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
                 </div>

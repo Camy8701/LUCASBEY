@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cécile Gasparini - LËTZ PHYSIO</title>
+    <title>FAQ - LËTZ PHYSIO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +13,8 @@
         .nav-pill { padding: 0.4rem 1rem; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.45); display: inline-flex; align-items: center; gap: 0.35rem; color: rgba(255,255,255,0.95); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.05em; transition: all 0.3s ease; text-decoration: none; }
         .nav-pill-green:hover { background: #2f6b4b; border-color: #2f6b4b; color: #fff; box-shadow: 0 10px 20px rgba(47,107,75,0.25); transform: translateY(-1px); }
         .nav-pill-beige:hover { background: #f2e6d0; border-color: #f2e6d0; color: #2f3a2f; box-shadow: 0 10px 20px rgba(242,230,208,0.35); transform: translateY(-1px); }
+        .faq-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+        .faq-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(32,42,45,0.15); border-color: rgba(32,42,45,0.35); }
     </style>
 </head>
 <body class="bg-[#cbd0b5] text-[#202a2d] font-['IBM_Plex_Sans'] antialiased selection:bg-[#202a2d] selection:text-[#cbd0b5]">
@@ -21,7 +23,7 @@
     <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/90 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between relative">
         <a href="index.html" class="flex items-center gap-2 sm:gap-3 select-none cursor-pointer group min-w-0">
             <img src="assets/logo.png" alt="LËTZ PHYSIO" class="h-12 w-12 sm:h-[70px] sm:w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
-            <span class="font-['DM_Serif_Display'] text-base sm:text-xl md:text-2xl text-white tracking-tight leading-none truncate max-w-[140px] sm:max-w-none">Lëtz Physio</span>
+            <span class="font-['DM_Serif_Display'] text-base sm:text-xl md:text-2xl text-white tracking-tight leading-none truncate max-w-[140px] sm:max-w-none">{{CLINIC_NAME}}</span>
         </a>
 
         <nav class="hidden lg:flex text-sm font-light text-stone-100 tracking-wide gap-x-3 gap-y-3 items-center">
@@ -46,18 +48,17 @@
 
             <!-- Language Dropdown -->
             <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
-                <span>🇩🇪 DE</span>
+                <span>&#127465;&#127466; DE</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
                 <div class="absolute top-full right-0 pt-6 w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
                     <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
-                        <a href="../cecile.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
-                        <a href="cecile.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
-                        <a href="../en/cecile.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
+                        <a href="../index.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">&#127467;&#127479; Français</a>
+                        <a href="index.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">&#127465;&#127466; Deutsch</a>
+                        <a href="../en/index.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">&#127468;&#127463; English</a>
                     </div>
                 </div>
             </div>
         </nav>
-
 
         <div class="flex lg:hidden items-center gap-2 shrink-0">
             
@@ -66,9 +67,7 @@
         </div>
 
         <div class="flex gap-6 items-center">
-            <a href="kontakt.html" class="hidden md:block uppercase hover:bg-[#3d4d41] hover:border-stone-400 transition-all duration-300 text-xs font-medium text-white tracking-[0.15em] bg-[#4A5D4F]/80 border-[#647a6a] border rounded-sm pt-3 pr-6 pb-3 pl-6 shadow-xl backdrop-blur-md">
-                Termin buchen
-            </a>
+            <a href="kontakt.html" class="hidden md:block uppercase hover:bg-[#3d4d41] hover:border-stone-400 transition-all duration-300 text-xs font-medium text-white tracking-[0.15em] bg-[#4A5D4F]/80 border-[#647a6a] border rounded-sm pt-3 pr-6 pb-3 pl-6 shadow-xl backdrop-blur-md">Termin buchen</a>
         </div>
 
         <div id="mobile-menu" class="absolute top-full left-0 w-full lg:hidden hidden">
@@ -94,103 +93,104 @@
             </div>
         </div>
 
-
         <div id="mobile-lang" class="absolute top-full left-0 w-full lg:hidden hidden">
             <div class="mx-6 md:mx-12 mt-4 mb-6 bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm p-4 text-stone-100">
                 <div class="flex flex-col">
-                    <a href="../cecile.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
-                    <a href="cecile.html" class="px-4 py-2 text-xs uppercase tracking-widest text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
-                    <a href="../en/cecile.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
+                    <a href="../faq.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇫🇷 Français</a>
+                    <a href="faq.html" class="px-4 py-2 text-xs uppercase tracking-widest text-white hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇩🇪 Deutsch</a>
+                    <a href="../en/faq.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors flex items-center gap-2">🇬🇧 English</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Back Link -->
-    <div class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-36">
-        <a href="team.html" class="inline-flex items-center gap-2 text-sm uppercase tracking-widest font-medium text-[#202a2d]/70 hover:text-[#202a2d] transition-colors">
-            <i data-lucide="arrow-left" class="w-4 h-4 stroke-[1.5]"></i> Zurück zum Team
-        </a>
-    </div>
+    <!-- Hero Section -->
+    <section class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-36 pb-12 md:pt-48 md:pb-20">
+        <div class="max-w-3xl">
+            <h1 class="font-['DM_Serif_Display'] text-[#202a2d] text-5xl md:text-7xl tracking-tight leading-[0.9] mb-6">
+                häufig gestellte <br><span class="italic font-normal opacity-80">Fragen</span>
+            </h1>
+            <p class="text-lg md:text-xl text-[#202a2d]/80 leading-relaxed font-light">
+                Alles, was Sie über Ihre Physiotherapie-Behandlung bei uns wissen müssen.
+            </p>
+        </div>
+    </section>
 
-    <!-- Profile Section -->
-    <section class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-12 pb-20 md:pt-20 md:pb-32">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+    <!-- FAQ Section -->
+    <section class="w-full max-w-7xl mx-auto px-6 md:px-12 pb-20 md:pb-32">
+        <div class="space-y-6">
 
-            <!-- Photo -->
-            <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                <img src="../assets/Cecile Gasparini.jpg" alt="Cécile Gasparini" class="w-full h-full object-cover">
+            <div class="faq-card border border-[#202a2d]/20 rounded-[1.5rem] p-6 md:p-8">
+                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight mb-4">Wie kann ich einen Termin buchen?</h3>
+                <p class="text-[#202a2d]/80 font-light leading-relaxed">
+                    Sie können einen Termin telefonisch unter <strong>{{PHONE_DISPLAY}}</strong> buchen oder über unsere <a href="{{BOOKING_URL}}" target="_blank" class="underline hover:opacity-60">Doctena-Seite</a> online vereinbaren. Sie können uns auch per SMS für schnelle Terminanfragen erreichen.
+                </p>
             </div>
 
-            <!-- Info -->
-            <div class="flex flex-col justify-center">
-                <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-4">Physiotherapeutin</span>
-                <h1 class="font-['DM_Serif_Display'] text-[#202a2d] text-5xl md:text-7xl tracking-tight leading-[0.9] mb-6">
-                    Cécile <br><span class="italic font-normal opacity-80">Gasparini</span>
-                </h1>
-                <p class="text-lg md:text-xl text-[#202a2d]/80 leading-relaxed font-light mb-8">
-                    Als diplomierte Physiotherapeutin führe ich Rehabilitationssitzungen in Orthopädie, Traumatologie, Neurologie und Geriatrie durch. Ich biete eine individuelle Betreuung, die evidenzbasierte Methoden mit den spezifischen Bedürfnissen jedes Patienten kombiniert, um bestmöglich auf ihre Anforderungen einzugehen.
+            <div class="faq-card border border-[#202a2d]/20 rounded-[1.5rem] p-6 md:p-8">
+                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight mb-4">Brauche ich ein Rezept?</h3>
+                <p class="text-[#202a2d]/80 font-light leading-relaxed">
+                    Ja, ein gültiges ärztliches Rezept ist für die Versicherungserstattung erforderlich. Ihr Arzt stellt eine Verordnung aus, die Art und Anzahl der benötigten Physiotherapiesitzungen angibt. Ohne Rezept können Sitzungen trotzdem gebucht werden, sind aber zum vollen Preis.
                 </p>
-                <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-8">
-                    Ich lege großen Wert auf einfühlsames Zuhören und helfe den Patienten, ihre Ziele zu formulieren, um eine angemessene Unterstützung zu gewährleisten. Um ihren Erwartungen bestmöglich gerecht zu werden, bilde ich mich regelmäßig weiter.
+            </div>
+
+            <div class="faq-card border border-[#202a2d]/20 rounded-[1.5rem] p-6 md:p-8">
+                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight mb-4">Was kostet es? Wird es von der Versicherung übernommen?</h3>
+                <p class="text-[#202a2d]/80 font-light leading-relaxed">
+                    Mit einem gültigen Rezept übernimmt die CNS (Caisse Nationale de Santé) in der Regel <strong>70%</strong> der Physiotherapiekosten. Sie zahlen die verbleibenden 30% (Eigenanteil). Wir stellen Ihnen alle notwendigen Unterlagen für Ihre Erstattungsansprüche zur Verfügung.
                 </p>
+            </div>
 
-                <div class="space-y-6 mb-10">
-                    <div>
-                        <h3 class="font-semibold text-sm uppercase tracking-widest text-[#202a2d]/70 mb-3">Spezialisierungen</h3>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Orthopädie</span>
-                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Traumatologie</span>
-                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Neurologie</span>
-                            <span class="px-4 py-2 rounded-full border border-[#202a2d]/20 text-sm">Geriatrie</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-sm uppercase tracking-widest text-[#202a2d]/70 mb-3">Sprachen</h3>
-                        <p class="text-[#202a2d]/80 font-light">Französisch, Englisch</p>
-                    </div>
-                </div>
+            <div class="faq-card border border-[#202a2d]/20 rounded-[1.5rem] p-6 md:p-8">
+                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight mb-4">Was soll ich zum ersten Termin mitbringen?</h3>
+                <p class="text-[#202a2d]/80 font-light leading-relaxed">
+                    Bitte bringen Sie Ihr ärztliches Rezept (Verordnung), Ihre CNS-Karte, relevante medizinische Bildgebung (Röntgenaufnahmen, MRT-Berichte) und bequeme Kleidung mit, die leichte Bewegung ermöglicht. Kommen Sie 5-10 Minuten früher, um eventuelle Unterlagen auszufüllen.
+                </p>
+            </div>
 
-                <a href="kontakt.html" class="inline-flex items-center gap-3 bg-[#202a2d] text-[#cbd0b5] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-[#202a2d]/80 transition-colors w-fit">
-                    Termin mit Cécile <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
-                </a>
+            <div class="faq-card border border-[#202a2d]/20 rounded-[1.5rem] p-6 md:p-8">
+                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight mb-4">Wie lange dauert eine Sitzung?</h3>
+                <p class="text-[#202a2d]/80 font-light leading-relaxed">
+                    Eine Standard-Physiotherapiesitzung dauert etwa 30 Minuten. Ihr erster Termin kann etwas länger sein, um eine gründliche Beurteilung und Besprechung des Behandlungsplans zu ermöglichen. Einige spezialisierte Behandlungen können längere Sitzungen erfordern.
+                </p>
+            </div>
+
+            <div class="faq-card border border-[#202a2d]/20 rounded-[1.5rem] p-6 md:p-8">
+                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight mb-4">Welche Sprachen sprechen Sie?</h3>
+                <p class="text-[#202a2d]/80 font-light leading-relaxed">
+                    Unser Team spricht insgesamt <strong>Englisch, Französisch, Spanisch und Portugiesisch</strong>. Wir betreuen Luxemburgs vielfältige internationale Gemeinschaft und sorgen für klare Kommunikation in Ihrer bevorzugten Sprache.
+                </p>
+            </div>
+
+            <div class="faq-card border border-[#202a2d]/20 rounded-[1.5rem] p-6 md:p-8">
+                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight mb-4">Ist die Praxis barrierefrei?</h3>
+                <p class="text-[#202a2d]/80 font-light leading-relaxed">
+                    Ja, unsere Praxis befindet sich im Erdgeschoss mit voller Barrierefreiheit für mobilitätseingeschränkte Personen. Straßenparkplätze sind in der Nähe verfügbar und wir sind leicht mit öffentlichen Verkehrsmitteln (Bus und Straßenbahn) erreichbar.
+                </p>
+            </div>
+
+            <div class="faq-card border border-[#202a2d]/20 rounded-[1.5rem] p-6 md:p-8">
+                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight mb-4">Was sind Ihre Stornierungsbedingungen?</h3>
+                <p class="text-[#202a2d]/80 font-light leading-relaxed">
+                    Bitte benachrichtigen Sie uns mindestens 24 Stunden im Voraus, wenn Sie Ihren Termin absagen oder verschieben müssen. Verspätete Absagen oder Nichterscheinen können vollständig in Rechnung gestellt werden. Wir verstehen, dass Notfälle passieren – kontaktieren Sie uns einfach so bald wie möglich.
+                </p>
             </div>
 
         </div>
     </section>
 
-    <!-- Diplomas Section -->
-    <section class="w-full px-4 md:px-12 mb-12">
-        <div class="w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-[#202a2d]/20 p-8 md:p-16">
-            <div class="max-w-3xl">
-                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#202a2d] tracking-tight mb-8">Diplome & Weiterbildungen</h2>
-                <ul class="space-y-4">
-                    <li class="flex gap-4">
-                        <div class="w-2 h-2 rounded-full bg-[#202a2d] mt-3 shrink-0"></div>
-                        <div>
-                            <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
-                                <strong class="font-medium">Institut für Manuelle Therapie und Physiotherapie</strong><br>
-                                100 Übungen zur Patientenautonomie in der muskuloskelettalen Rehabilitation. Schulung durch Major Mouvement, 22.05.2025
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Feedback Section -->
+    <!-- CTA -->
     <section class="w-full px-4 md:px-12 mb-24">
-        <div class="w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-[#202a2d] p-8 md:p-16">
-            <div class="max-w-3xl">
-                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#cbd0b5] tracking-tight mb-6">Patientenbewertungen</h2>
-                <p class="text-lg text-[#cbd0b5]/80 leading-relaxed font-light mb-8">
-                    Entdecken Sie die Bewertungen meiner Patienten auf Doctena und teilen Sie Ihre eigene Erfahrung nach Ihrer Konsultation.
-                </p>
-                <a href="https://www.doctena.lu/fr/specialite/kinesitherapeute/cecile-gasparini-1934773/feedback" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-[#cbd0b5] text-[#202a2d] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-white transition-colors">
-                    Bewertungen auf Doctena ansehen <i data-lucide="external-link" class="w-4 h-4 stroke-[2]"></i>
-                </a>
-            </div>
+        <div class="w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-[#202a2d] p-8 md:p-16 text-center">
+            <h2 class="font-['DM_Serif_Display'] text-[#cbd0b5] text-3xl md:text-5xl tracking-tight mb-6">
+                noch <span class="italic font-normal opacity-80">Fragen?</span>
+            </h2>
+            <p class="text-[#cbd0b5]/80 font-light max-w-xl mx-auto mb-8">
+                Zögern Sie nicht, uns zu kontaktieren. Wir helfen Ihnen gerne weiter.
+            </p>
+            <a href="kontakt.html" class="inline-flex items-center gap-3 bg-[#cbd0b5] text-[#202a2d] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-white transition-colors">
+                Kontaktieren Sie uns <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
+            </a>
         </div>
     </section>
 
@@ -200,7 +200,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <a href="index.html" class="flex items-center gap-3">
                     <img src="assets/logo.png" alt="LËTZ PHYSIO" class="h-10 rounded-full">
-                    <span class="font-['DM_Serif_Display'] text-3xl">Lëtz Physio</span>
+                    <span class="font-['DM_Serif_Display'] text-3xl">{{CLINIC_NAME}}</span>
                 </a>
                 <div class="flex gap-8 text-sm font-light">
                     <a href="leistungen.html" class="hover:text-white transition-colors">Leistungen</a>
