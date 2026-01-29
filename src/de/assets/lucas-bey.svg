@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="900" viewBox="0 0 720 900" role="img" aria-label="Lucas Bey">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#cbd0b5" />
+      <stop offset="100%" stop-color="#e7e4d6" />
+    </linearGradient>
+  </defs>
+  <rect width="720" height="900" rx="40" fill="url(#bg)" />
+  <circle cx="360" cy="320" r="120" fill="#202a2d" opacity="0.15" />
+  <rect x="180" y="470" width="360" height="260" rx="120" fill="#202a2d" opacity="0.15" />
+  <text x="360" y="640" text-anchor="middle" font-family="'DM Serif Display', 'Times New Roman', serif" font-size="40" fill="#202a2d">Lucas Bey</text>
+  <text x="360" y="690" text-anchor="middle" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="16" letter-spacing="2" fill="#202a2d">OSTEOPATHE D.O.</text>
+</svg>

@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - LËTZ PHYSIO</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Services - {{CLINIC_NAME}}</title>
+    
+    <link rel="stylesheet" href="/styles.css">
+<script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
@@ -21,12 +22,12 @@
         .hero-accent { animation: heroReveal 1.1s ease 0.4s both; }
     </style>
 </head>
-<body class="bg-[#cbd0b5] text-[#202a2d] font-['IBM_Plex_Sans'] antialiased selection:bg-[#202a2d] selection:text-[#cbd0b5]">
-
-    <!-- Navigation -->
-    <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/90 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between relative">
+<body class="text-[#202a2d] font-['IBM_Plex_Sans'] antialiased selection:bg-[#202a2d] selection:text-white relative">
+    <div id="bg-root"></div>
+<!-- Navigation -->
+    <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/55 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between relative">
         <a href="index.html" class="flex items-center gap-2 sm:gap-3 select-none cursor-pointer group min-w-0">
-            <img src="assets/logo.png" alt="LËTZ PHYSIO" class="h-12 w-12 sm:h-[70px] sm:w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
+            <img src="assets/logo.svg" alt="{{CLINIC_NAME}}" class="h-12 w-12 sm:h-[70px] sm:w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
             <span class="font-['DM_Serif_Display'] text-base sm:text-xl md:text-2xl text-white tracking-tight leading-none truncate max-w-[140px] sm:max-w-none">{{CLINIC_NAME}}</span>
         </a>
 
@@ -35,18 +36,7 @@
             <a href="services.html" class="nav-pill nav-pill-beige">Services</a>
             <a href="faq.html" class="nav-pill nav-pill-green">FAQ</a>
 
-            <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
-                <span>Équipe</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
-                <div class="absolute top-full left-0 pt-6 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
-                    <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
-                        <a href="arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Arthur Menzies</a>
-                        <a href="cecile.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Cécile Gasparini</a>
-                        <a href="lais.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Laïs Carneiro</a>
-                        <a href="lea.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Léa Triole</a>
-                    </div>
-                </div>
-            </div>
+            <a href="team.html" class="nav-pill nav-pill-beige">Le praticien</a>
 
             <a href="contact.html" class="nav-pill nav-pill-green">Contact</a>
 
@@ -70,32 +60,14 @@
             <button id="mobile-menu-toggle" class="nav-pill nav-pill-green px-3 py-2 text-xs uppercase tracking-widest">Menu</button>
             <button id="mobile-lang-toggle" class="nav-pill nav-pill-beige px-3 py-2 text-xs uppercase tracking-widest">Langue</button>
         </div>
-
-        <div class="flex gap-6 items-center">
-            <a href="contact.html" class="hidden md:block uppercase hover:bg-[#3d4d41] hover:border-stone-400 transition-all duration-300 text-xs font-medium text-white tracking-[0.15em] bg-[#4A5D4F]/80 border-[#647a6a] border rounded-sm pt-3 pr-6 pb-3 pl-6 shadow-xl backdrop-blur-md">
-                Prendre rendez-vous
-            </a>
-        </div>
-
         <div id="mobile-menu" class="absolute top-full left-0 w-full lg:hidden hidden">
             <div class="mx-6 md:mx-12 mt-4 mb-6 bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm p-4 text-stone-100">
                 <div class="flex flex-col gap-2">
                     <a href="index.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Accueil</a>
                     <a href="services.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Services</a>
                     <a href="faq.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">FAQ</a>
+                    <a href="team.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Le praticien</a>
                     <a href="contact.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Contact</a>
-                    <div class="border-t border-white/10 pt-3 mt-2">
-                        <p class="px-4 text-xs uppercase tracking-widest text-stone-400 mb-2">Équipe</p>
-                        <div class="flex flex-col">
-                            <a href="arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Arthur Menzies</a>
-                            <a href="cecile.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Cécile Gasparini</a>
-                            <a href="lais.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Laïs Carneiro</a>
-                            <a href="lea.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Léa Triole</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="mt-4 inline-flex items-center justify-center gap-2 bg-[#cbd0b5] text-[#202a2d] px-6 py-3 rounded-full text-xs uppercase tracking-widest font-semibold hover:bg-white transition-colors">
-                        Prendre rendez-vous <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
-                    </a>
                 </div>
             </div>
         </div>
@@ -117,10 +89,10 @@
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-12">
             <div class="max-w-3xl">
                 <h1 class="hero-title font-['DM_Serif_Display'] text-[#202a2d] text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8">
-                    nos <br><span class="italic font-normal opacity-80">techniques</span>
+                    nos <br><span class="italic font-normal opacity-80">approches</span>
                 </h1>
                 <p class="hero-subtitle text-lg md:text-xl text-[#202a2d]/80 leading-relaxed max-w-2xl font-light">
-                    Nous proposons une gamme complète de services de kinésithérapie adaptés à vos besoins individuels. Des blessures sportives à la gestion de la douleur chronique, notre approche fondée sur les preuves offre des résultats durables.
+                    Quatre pratiques d'ostéopathie complémentaires pour accompagner vos besoins : fonctionnelle, viscérale, structurelle et crânienne. Chaque séance est adaptée à votre situation.
                 </p>
             </div>
             <div class="hero-accent hidden md:block rotate-[-6deg] translate-y-[-2rem]">
@@ -134,82 +106,82 @@
     <section class="w-full max-w-7xl mx-auto px-6 md:px-12 mb-32">
         <div class="grid grid-cols-1 gap-16 md:gap-24">
 
-            <!-- Service 1: Rééducation du dos et des articulations -->
+            <!-- Service 1: Ostéopathie fonctionnelle -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1200&auto=format&fit=crop" alt="Rééducation du dos et des articulations" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1200&auto=format&fit=crop" alt="Ostéopathie fonctionnelle" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-3 block">01</span>
-                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Rééducation du dos et des articulations</h2>
+                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Ostéopathie fonctionnelle</h2>
                     <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
-                        Traitement complet des troubles de la colonne vertébrale, hernies discales, sciatiques et douleurs articulaires. Nous combinons thérapie manuelle et exercices ciblés pour restaurer la mobilité, réduire la douleur et prévenir les récidives.
+                        Approche globale centrée sur la mobilité et l'équilibre du corps. L'objectif est d'identifier les restrictions de mouvement et de restaurer une fonction harmonieuse.
                     </p>
                     <ul class="space-y-3 text-[#202a2d]/70">
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Mobilisation vertébrale</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Manipulation articulaire</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Correction posturale</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Programmes de renforcement</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Évaluation globale du mouvement</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Travail des chaînes musculaires</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Ajustements doux et progressifs</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Conseils personnalisés</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Service 2: Kinésithérapie sportive -->
+            <!-- Service 2: Ostéopathie viscérale -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="order-1 md:order-2 aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1200&auto=format&fit=crop" alt="Kinésithérapie sportive" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1200&auto=format&fit=crop" alt="Ostéopathie viscérale" class="w-full h-full object-cover">
                 </div>
                 <div class="order-2 md:order-1">
                     <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-3 block">02</span>
-                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Kinésithérapie sportive</h2>
+                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Ostéopathie viscérale</h2>
                     <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
-                        Soins spécialisés pour les sportifs de tous niveaux. De la prise en charge des blessures aiguës à l'optimisation des performances, nous vous aidons à récupérer plus vite et à performer mieux grâce à des programmes de rééducation spécifiques au sport.
+                        Travail manuel doux des tissus viscéraux et de leurs attaches. Cette approche vise à améliorer la mobilité interne et le confort global.
                     </p>
                     <ul class="space-y-3 text-[#202a2d]/70">
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Rééducation après blessure</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Programmes de retour au sport</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Bilan de performance</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Entraînement préventif</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Mobilité des tissus viscéraux</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Soutien du diaphragme</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Détente des tensions abdominales</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Approche personnalisée</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Service 3: Drainage lymphatique -->
+            <!-- Service 3: Ostéopathie structurelle -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200&auto=format&fit=crop" alt="Drainage lymphatique" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200&auto=format&fit=crop" alt="Ostéopathie structurelle" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-3 block">03</span>
-                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Drainage lymphatique</h2>
+                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Ostéopathie structurelle</h2>
                     <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
-                        Technique manuelle douce et rythmique qui stimule le système lymphatique pour réduire les gonflements, détoxifier le corps et favoriser la guérison. Particulièrement efficace pour la récupération post-chirurgicale et les affections chroniques.
+                        Approche ciblée sur les structures musculo-squelettiques. Elle vise à relâcher les tensions articulaires et à améliorer la posture.
                     </p>
                     <ul class="space-y-3 text-[#202a2d]/70">
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Réduction des œdèmes</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Récupération post-chirurgicale</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Soutien du système immunitaire</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Thérapie de relaxation</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Mobilisation articulaire</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Travail postural</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Soulagement des tensions</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Prévention des récidives</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Service 4: Thérapie manuelle -->
+            <!-- Service 4: Ostéopathie crânienne -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="order-1 md:order-2 aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1573883430060-dcfcff703b27?q=80&w=1200&auto=format&fit=crop" alt="Thérapie manuelle" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1573883430060-dcfcff703b27?q=80&w=1200&auto=format&fit=crop" alt="Ostéopathie crânienne" class="w-full h-full object-cover">
                 </div>
                 <div class="order-2 md:order-1">
                     <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-3 block">04</span>
-                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Thérapie manuelle</h2>
+                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Ostéopathie crânienne</h2>
                     <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
-                        Techniques manuelles incluant le massage des tissus profonds, la thérapie des points trigger et la libération myofasciale. Conçues pour soulager les tensions musculaires, améliorer la circulation et accélérer la guérison naturelle.
+                        Approche très douce centrée sur les tensions crânio-cervicales et l'équilibre global. Elle vise à favoriser la détente et le confort.
                     </p>
                     <ul class="space-y-3 text-[#202a2d]/70">
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Travail des tissus profonds</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Libération des points trigger</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Techniques myofasciales</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Massage thérapeutique</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Toucher léger et précis</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Tensions crânio-cervicales</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Équilibre global</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Détente profonde</li>
                     </ul>
                 </div>
             </div>
@@ -222,11 +194,11 @@
         <div class="w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-[#202a2d]/20 p-8 md:p-16">
             <div class="max-w-3xl mx-auto text-center">
                 <i data-lucide="shield-check" class="w-12 h-12 text-[#202a2d] mx-auto mb-6 stroke-[1.5]"></i>
-                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Prise en charge</h2>
+                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Remboursement & mutuelles</h2>
                 <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
-                    Avec une ordonnance valide de votre médecin, la CNS (Caisse Nationale de Santé) couvre généralement <strong>70%</strong> des frais de kinésithérapie. Vous ne payez que 30% de votre poche (ticket modérateur). Nous pouvons vous aider dans vos démarches.
+                    La prise en charge des consultations d'ostéopathie dépend de votre assurance ou mutuelle. Nous vous conseillons de vérifier vos conditions de remboursement avant la séance.
                 </p>
-                <a href="contact.html" class="inline-flex items-center gap-3 bg-[#202a2d] text-[#cbd0b5] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-[#202a2d]/80 transition-colors">
+                <a href="contact.html" class="inline-flex items-center gap-3 bg-[#202a2d] text-white px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-[#202a2d]/80 transition-colors">
                     Commencer <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
                 </a>
             </div>
@@ -234,61 +206,23 @@
     </section>
 
     <!-- Footer -->
-    <footer class="w-full px-6 md:px-12 py-16 bg-[#202a2d] text-[#cbd0b5]">
+    <footer class="w-full px-6 md:px-12 py-16 bg-[#202a2d] text-white">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <a href="index.html" class="flex items-center gap-3">
-                    <img src="assets/logo.png" alt="LËTZ PHYSIO" class="h-10 rounded-full">
+                    <img src="assets/logo.svg" alt="{{CLINIC_NAME}}" class="h-10 rounded-full">
                     <span class="font-['DM_Serif_Display'] text-3xl">{{CLINIC_NAME}}</span>
                 </a>
                 <div class="flex gap-8 text-sm font-light">
                     <a href="services.html" class="hover:text-white transition-colors">Services</a>
-                    <a href="team.html" class="hover:text-white transition-colors">Équipe</a>
+                    <a href="team.html" class="hover:text-white transition-colors">Le praticien</a>
                     <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
                     <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
                 </div>
-                <p class="text-xs opacity-60 uppercase tracking-widest">&copy; 2024 LËTZ PHYSIO</p>
+                <p class="text-xs opacity-60 uppercase tracking-widest">&copy; 2026 {{CLINIC_NAME}}</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        (function() {
-            const menuToggle = document.getElementById("mobile-menu-toggle");
-            const langToggle = document.getElementById("mobile-lang-toggle");
-            const menuPanel = document.getElementById("mobile-menu");
-            const langPanel = document.getElementById("mobile-lang");
-
-            function closePanel(panel) {
-                if (panel && !panel.classList.contains("hidden")) {
-                    panel.classList.add("hidden");
-                }
-            }
-
-            menuToggle && menuToggle.addEventListener("click", function() {
-                if (!menuPanel) return;
-                menuPanel.classList.toggle("hidden");
-                closePanel(langPanel);
-            });
-
-            langToggle && langToggle.addEventListener("click", function() {
-                if (!langPanel) return;
-                langPanel.classList.toggle("hidden");
-                closePanel(menuPanel);
-            });
-
-            document.addEventListener("click", function(event) {
-                const target = event.target;
-                const isToggle = menuToggle && menuToggle.contains(target) || langToggle && langToggle.contains(target);
-                const isPanel = menuPanel && menuPanel.contains(target) || langPanel && langPanel.contains(target);
-                if (!isToggle && !isPanel) {
-                    closePanel(menuPanel);
-                    closePanel(langPanel);
-                }
-            });
-        })();
-    </script>
-    <script>lucide.createIcons();</script>
-    <script src="https://app.contactbutton.com/script/f9179d71a69db1d708e6c0da599ed485" async="async"></script>
+    <script type="module" src="/bg-entry.tsx"></script>
 </body>
 </html>

@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 48 46% 96%;
+  --foreground: 196 16% 17%;
+  --primary: 162 23% 40%;
+  --card: 0 0% 100%;
+}
+
+html,
+body {
+  background: transparent;
+}
+
+body {
+  color: hsl(var(--foreground));
+}
+
+#bg-root {
+  isolation: isolate;
+}
+
+section:not(.relative) {
+  background-color: transparent;
+}
+
+.faq-card {
+  position: relative;
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.faq-card::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 1px solid rgba(164, 233, 196, 0.4);
+  box-shadow: 0 0 16px rgba(164, 233, 196, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.faq-card:hover {
+  border-color: rgba(164, 233, 196, 0.6);
+}
+
+.faq-card:hover::after {
+  opacity: 1;
+  animation: faqGlow 1.6s ease-in-out infinite;
+}
+
+@keyframes faqGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 14px rgba(164, 233, 196, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 34px rgba(164, 233, 196, 0.35);
+  }
+}

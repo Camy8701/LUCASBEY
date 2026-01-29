@@ -1,11 +1,11 @@
 {
-  "CLINIC_NAME": "Letz Physio",
-  "CLINIC_NAME_UPPER": "LETZ PHYSIO",
-  "PHONE_DISPLAY": "+352 691 385 556",
-  "PHONE_TEL": "+352691385556",
-  "EMAIL": "letzphysio@gmail.com",
-  "ADDRESS_LINE1": "12 Rue Du Laboratoire",
-  "ADDRESS_LINE2": "1911 Luxembourg",
-  "ADDRESS_INLINE": "12 Rue Du Laboratoire, 1911 Luxembourg",
-  "BOOKING_URL": "https://www.doctena.lu/fr/cabinet/luxembourg/letz-physio-430329"
+  "CLINIC_NAME": "Cabinet d'Osteopathie Monsieur Lucas Bey",
+  "CLINIC_NAME_UPPER": "CABINET D'OSTEOPATHIE MONSIEUR LUCAS BEY",
+  "PHONE_DISPLAY": "+352 621 484 132",
+  "PHONE_TEL": "+352621484132",
+  "EMAIL": "beylucas.osteo@gmail.com",
+  "ADDRESS_LINE1": "6 Rue Leonardo Da Vinci",
+  "ADDRESS_LINE2": "2681 Luxembourg",
+  "ADDRESS_INLINE": "6 Rue Leonardo Da Vinci, 2681 Luxembourg",
+  "BOOKING_URL": "https://www.doctena.lu/fr/specialite/osteopathe/mr-lucas-bey-1381870#19957"
 }

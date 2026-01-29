@@ -1,0 +1,40 @@
+{
+  "name": "leitztemplate1",
+  "version": "1.0.0",
+  "description": "This repo is a white-label template based on the Letz Physio site. Edit `data.json` with your client details and run the build script to generate a ready-to-deploy site in `dist/`.",
+  "type": "module",
+  "main": "build.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Camy8701/LEITZTEMPLATE1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@paper-design/shaders-react": "^0.0.47",
+    "lucide-react": "^0.469.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.7.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  },
+  "bugs": {
+    "url": "https://github.com/Camy8701/LEITZTEMPLATE1/issues"
+  },
+  "homepage": "https://github.com/Camy8701/LEITZTEMPLATE1#readme"
+}

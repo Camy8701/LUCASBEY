@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - LËTZ PHYSIO</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Services - {{CLINIC_NAME}}</title>
+    
+    <link rel="stylesheet" href="/styles.css">
+<script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
@@ -19,12 +20,12 @@
         .hero-accent { animation: heroReveal 1.1s ease 0.4s both; }
     </style>
 </head>
-<body class="bg-[#cbd0b5] text-[#202a2d] font-['IBM_Plex_Sans'] antialiased selection:bg-[#202a2d] selection:text-[#cbd0b5]">
-
-    <!-- Navigation -->
-    <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/90 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between relative">
+<body class="text-[#202a2d] font-['IBM_Plex_Sans'] antialiased selection:bg-[#202a2d] selection:text-white relative">
+    <div id="bg-root"></div>
+<!-- Navigation -->
+    <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/55 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between relative">
         <a href="index.html" class="flex items-center gap-2 sm:gap-3 select-none cursor-pointer group min-w-0">
-            <img src="assets/logo.png" alt="LËTZ PHYSIO" class="h-12 w-12 sm:h-[70px] sm:w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
+            <img src="assets/logo.svg" alt="{{CLINIC_NAME}}" class="h-12 w-12 sm:h-[70px] sm:w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
             <span class="font-['DM_Serif_Display'] text-base sm:text-xl md:text-2xl text-white tracking-tight leading-none truncate max-w-[140px] sm:max-w-none">{{CLINIC_NAME}}</span>
         </a>
 
@@ -33,18 +34,7 @@
             <a href="services.html" class="nav-pill nav-pill-beige">Services</a>
             <a href="faq.html" class="nav-pill nav-pill-green">FAQ</a>
 
-            <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
-                <span>Team</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
-                <div class="absolute top-full left-0 pt-6 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
-                    <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
-                        <a href="arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Arthur Menzies</a>
-                        <a href="cecile.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Cecile Gasparini</a>
-                        <a href="lais.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Lais Carneiro</a>
-                        <a href="lea.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Lea Triole</a>
-                    </div>
-                </div>
-            </div>
+            <a href="team.html" class="nav-pill nav-pill-beige">Osteopath</a>
 
             <a href="contact.html" class="nav-pill nav-pill-green">Contact</a>
 
@@ -68,32 +58,14 @@
             <button id="mobile-menu-toggle" class="nav-pill nav-pill-green px-3 py-2 text-xs uppercase tracking-widest">Menu</button>
             <button id="mobile-lang-toggle" class="nav-pill nav-pill-beige px-3 py-2 text-xs uppercase tracking-widest">Lang</button>
         </div>
-
-        <div class="flex gap-6 items-center">
-            <a href="contact.html" class="hidden md:block uppercase hover:bg-[#3d4d41] hover:border-stone-400 transition-all duration-300 text-xs font-medium text-white tracking-[0.15em] bg-[#4A5D4F]/80 border-[#647a6a] border rounded-sm pt-3 pr-6 pb-3 pl-6 shadow-xl backdrop-blur-md">
-                Book Appointment
-            </a>
-        </div>
-
         <div id="mobile-menu" class="absolute top-full left-0 w-full lg:hidden hidden">
             <div class="mx-6 md:mx-12 mt-4 mb-6 bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm p-4 text-stone-100">
                 <div class="flex flex-col gap-2">
                     <a href="index.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Home</a>
                     <a href="services.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Services</a>
                     <a href="faq.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">FAQ</a>
+                    <a href="team.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Osteopath</a>
                     <a href="contact.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Contact</a>
-                    <div class="border-t border-white/10 pt-3 mt-2">
-                        <p class="px-4 text-xs uppercase tracking-widest text-stone-400 mb-2">Team</p>
-                        <div class="flex flex-col">
-                            <a href="arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Arthur Menzies</a>
-                            <a href="cecile.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Cécile Gasparini</a>
-                            <a href="lais.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Laïs Carneiro</a>
-                            <a href="lea.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Léa Triole</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="mt-4 inline-flex items-center justify-center gap-2 bg-[#cbd0b5] text-[#202a2d] px-6 py-3 rounded-full text-xs uppercase tracking-widest font-semibold hover:bg-white transition-colors">
-                        Book Appointment <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
-                    </a>
                 </div>
             </div>
         </div>
@@ -115,10 +87,10 @@
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-12">
             <div class="max-w-3xl">
                 <h1 class="hero-title font-['DM_Serif_Display'] text-[#202a2d] text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8">
-                    our <br><span class="italic font-normal opacity-80">techniques</span>
+                    our <br><span class="italic font-normal opacity-80">approaches</span>
                 </h1>
                 <p class="hero-subtitle text-lg md:text-xl text-[#202a2d]/80 leading-relaxed max-w-2xl font-light">
-                    We offer a comprehensive range of physiotherapy services tailored to your individual needs. From sports injuries to chronic pain management, our evidence-based approach delivers lasting results.
+                    Four complementary osteopathy approaches: functional, visceral, structural, and cranial. Each session is tailored to your needs.
                 </p>
             </div>
             <div class="hero-accent hidden md:block rotate-[-6deg] translate-y-[-2rem]">
@@ -132,82 +104,82 @@
     <section class="w-full max-w-7xl mx-auto px-6 md:px-12 mb-32">
         <div class="grid grid-cols-1 gap-16 md:gap-24">
 
-            <!-- Service 1: Back & Joints -->
+            <!-- Service 1: Functional osteopathy -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1200&auto=format&fit=crop" alt="Back & Joints Rehabilitation" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1200&auto=format&fit=crop" alt="Functional osteopathy" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-3 block">01</span>
-                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Back & Joints Rehabilitation</h2>
+                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Functional osteopathy</h2>
                     <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
-                        Comprehensive treatment for spinal disorders, herniated discs, sciatica, and joint pain. We combine manual therapy with targeted exercises to restore mobility, reduce pain, and prevent recurrence.
+                        A global approach focused on mobility and balance. We identify movement restrictions and restore functional harmony.
                     </p>
                     <ul class="space-y-3 text-[#202a2d]/70">
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Spinal mobilization</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Joint manipulation</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Postural correction</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Strengthening programs</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Global movement assessment</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Muscle chain work</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Gentle adjustments</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Personalised advice</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Service 2: Sports Physiotherapy -->
+            <!-- Service 2: Visceral osteopathy -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="order-1 md:order-2 aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1200&auto=format&fit=crop" alt="Sports Physiotherapy" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1200&auto=format&fit=crop" alt="Visceral osteopathy" class="w-full h-full object-cover">
                 </div>
                 <div class="order-2 md:order-1">
                     <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-3 block">02</span>
-                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Sports Physiotherapy</h2>
+                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Visceral osteopathy</h2>
                     <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
-                        Specialized care for athletes at all levels. From acute injury management to performance optimization, we help you recover faster and perform better with sport-specific rehabilitation programs.
+                        Gentle manual work on visceral tissues and their attachments. This approach aims to improve internal mobility and overall comfort.
                     </p>
                     <ul class="space-y-3 text-[#202a2d]/70">
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Injury rehabilitation</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Return-to-sport programs</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Performance screening</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Preventive training</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Visceral tissue mobility</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Diaphragm support</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Abdominal tension release</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Individualised approach</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Service 3: Lymphatic Drainage -->
+            <!-- Service 3: Structural osteopathy -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200&auto=format&fit=crop" alt="Lymphatic Drainage" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200&auto=format&fit=crop" alt="Structural osteopathy" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-3 block">03</span>
-                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Lymphatic Drainage</h2>
+                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Structural osteopathy</h2>
                     <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
-                        Gentle, rhythmic manual technique that stimulates the lymphatic system to reduce swelling, detoxify the body, and promote healing. Particularly effective for post-surgical recovery and chronic conditions.
+                        Targeted approach for musculoskeletal structures. It helps release joint tension and improve posture.
                     </p>
                     <ul class="space-y-3 text-[#202a2d]/70">
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Edema reduction</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Post-surgical recovery</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Immune system support</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Relaxation therapy</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Joint mobilisation</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Postural work</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Tension relief</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Recurrence prevention</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Service 4: Manual Therapy -->
+            <!-- Service 4: Cranial osteopathy -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="order-1 md:order-2 aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1573883430060-dcfcff703b27?q=80&w=1200&auto=format&fit=crop" alt="Manual Therapy" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1573883430060-dcfcff703b27?q=80&w=1200&auto=format&fit=crop" alt="Cranial osteopathy" class="w-full h-full object-cover">
                 </div>
                 <div class="order-2 md:order-1">
                     <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium mb-3 block">04</span>
-                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Manual Therapy</h2>
+                    <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Cranial osteopathy</h2>
                     <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
-                        Hands-on techniques including deep tissue massage, trigger point therapy, and myofascial release. Designed to relieve muscle tension, improve circulation, and accelerate natural healing.
+                        Very gentle approach focused on cranio-cervical tensions and overall balance. It aims to promote relaxation and comfort.
                     </p>
                     <ul class="space-y-3 text-[#202a2d]/70">
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Deep tissue work</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Trigger point release</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Myofascial techniques</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Therapeutic massage</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Light, precise touch</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Cranio-cervical tensions</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Global balance</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 stroke-[2]"></i> Deep relaxation</li>
                     </ul>
                 </div>
             </div>
@@ -220,11 +192,11 @@
         <div class="w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-[#202a2d]/20 p-8 md:p-16">
             <div class="max-w-3xl mx-auto text-center">
                 <i data-lucide="shield-check" class="w-12 h-12 text-[#202a2d] mx-auto mb-6 stroke-[1.5]"></i>
-                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Insurance Coverage</h2>
+                <h2 class="font-['DM_Serif_Display'] text-3xl md:text-5xl text-[#202a2d] tracking-tight mb-4">Reimbursement & insurance</h2>
                 <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light mb-6">
-                    With a valid prescription from your doctor, the CNS (Caisse Nationale de Sante) typically covers 70% of physiotherapy costs. You only pay 30% out of pocket. We can help you navigate the process.
+                    Coverage for osteopathy sessions depends on your insurance or health plan. Please check your policy or contact us for details.
                 </p>
-                <a href="contact.html" class="inline-flex items-center gap-3 bg-[#202a2d] text-[#cbd0b5] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-[#202a2d]/80 transition-colors">
+                <a href="contact.html" class="inline-flex items-center gap-3 bg-[#202a2d] text-white px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-[#202a2d]/80 transition-colors">
                     Get Started <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
                 </a>
             </div>
@@ -232,61 +204,23 @@
     </section>
 
     <!-- Footer -->
-    <footer class="w-full px-6 md:px-12 py-16 bg-[#202a2d] text-[#cbd0b5]">
+    <footer class="w-full px-6 md:px-12 py-16 bg-[#202a2d] text-white">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <a href="index.html" class="flex items-center gap-3">
-                    <img src="assets/logo.png" alt="LËTZ PHYSIO" class="h-10 rounded-full">
+                    <img src="assets/logo.svg" alt="{{CLINIC_NAME}}" class="h-10 rounded-full">
                     <span class="font-['DM_Serif_Display'] text-3xl">{{CLINIC_NAME}}</span>
                 </a>
                 <div class="flex gap-8 text-sm font-light">
                     <a href="services.html" class="hover:text-white transition-colors">Services</a>
-                    <a href="team.html" class="hover:text-white transition-colors">Team</a>
+                    <a href="team.html" class="hover:text-white transition-colors">Osteopath</a>
                     <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
                     <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
                 </div>
-                <p class="text-xs opacity-60 uppercase tracking-widest">&copy; 2024 LËTZ PHYSIO</p>
+                <p class="text-xs opacity-60 uppercase tracking-widest">&copy; 2026 {{CLINIC_NAME}}</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        (function() {
-            const menuToggle = document.getElementById("mobile-menu-toggle");
-            const langToggle = document.getElementById("mobile-lang-toggle");
-            const menuPanel = document.getElementById("mobile-menu");
-            const langPanel = document.getElementById("mobile-lang");
-
-            function closePanel(panel) {
-                if (panel && !panel.classList.contains("hidden")) {
-                    panel.classList.add("hidden");
-                }
-            }
-
-            menuToggle && menuToggle.addEventListener("click", function() {
-                if (!menuPanel) return;
-                menuPanel.classList.toggle("hidden");
-                closePanel(langPanel);
-            });
-
-            langToggle && langToggle.addEventListener("click", function() {
-                if (!langPanel) return;
-                langPanel.classList.toggle("hidden");
-                closePanel(menuPanel);
-            });
-
-            document.addEventListener("click", function(event) {
-                const target = event.target;
-                const isToggle = menuToggle && menuToggle.contains(target) || langToggle && langToggle.contains(target);
-                const isPanel = menuPanel && menuPanel.contains(target) || langPanel && langPanel.contains(target);
-                if (!isToggle && !isPanel) {
-                    closePanel(menuPanel);
-                    closePanel(langPanel);
-                }
-            });
-        })();
-    </script>
-    <script>lucide.createIcons();</script>
-    <script src="https://app.contactbutton.com/script/f9179d71a69db1d708e6c0da599ed485" async="async"></script>
+    <script type="module" src="/bg-entry.tsx"></script>
 </body>
 </html>

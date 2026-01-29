@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LËTZ PHYSIO - Your body is in good hands</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>{{CLINIC_NAME}} - Osteopathy in Luxembourg</title>
+    
+    <link rel="stylesheet" href="/styles.css">
+<script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
@@ -40,12 +41,12 @@
         }
     </style>
 </head>
-<body class="bg-[#cbd0b5] text-[#202a2d] font-['IBM_Plex_Sans'] antialiased selection:bg-[#202a2d] selection:text-[#cbd0b5]">
-
-    <!-- Navigation -->
-    <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/90 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between relative">
+<body class="text-[#202a2d] font-['IBM_Plex_Sans'] antialiased selection:bg-[#202a2d] selection:text-white relative">
+    <div id="bg-root"></div>
+<!-- Navigation -->
+    <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/55 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between relative">
         <a href="index.html" class="flex items-center gap-2 sm:gap-3 select-none cursor-pointer group min-w-0">
-            <img src="assets/logo.png" alt="LËTZ PHYSIO" class="h-12 w-12 sm:h-[70px] sm:w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
+            <img src="assets/logo.svg" alt="{{CLINIC_NAME}}" class="h-12 w-12 sm:h-[70px] sm:w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
             <span class="font-['DM_Serif_Display'] text-base sm:text-xl md:text-2xl text-white tracking-tight leading-none truncate max-w-[140px] sm:max-w-none">{{CLINIC_NAME}}</span>
         </a>
 
@@ -54,18 +55,7 @@
             <a href="services.html" class="nav-pill nav-pill-beige">Services</a>
             <a href="faq.html" class="nav-pill nav-pill-green">FAQ</a>
 
-            <div class="nav-pill nav-pill-beige group flex cursor-pointer gap-1.5 relative items-center">
-                <span>Team</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
-                <div class="absolute top-full left-0 pt-6 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
-                    <div class="bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm py-2 flex flex-col">
-                        <a href="arthur.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Arthur Menzies</a>
-                        <a href="cecile.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Cecile Gasparini</a>
-                        <a href="lais.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Lais Carneiro</a>
-                        <a href="lea.html" class="px-5 py-2.5 text-xs uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800/50 transition-colors">Lea Triole</a>
-                    </div>
-                </div>
-            </div>
+            <a href="team.html" class="nav-pill nav-pill-beige">Osteopath</a>
 
             <a href="contact.html" class="nav-pill nav-pill-green">Contact</a>
 
@@ -90,31 +80,14 @@
             <button id="mobile-lang-toggle" class="nav-pill nav-pill-beige px-3 py-2 text-xs uppercase tracking-widest">Lang</button>
         </div>
 
-        <div class="flex gap-6 items-center">
-            <a href="contact.html" class="hidden md:block uppercase hover:bg-[#3d4d41] hover:border-stone-400 transition-all duration-300 text-xs font-medium text-white tracking-[0.15em] bg-[#4A5D4F]/80 border-[#647a6a] border rounded-sm pt-3 pr-6 pb-3 pl-6 shadow-xl backdrop-blur-md">
-                Book Appointment
-            </a>
-        </div>
-
         <div id="mobile-menu" class="absolute top-full left-0 w-full lg:hidden hidden">
             <div class="mx-6 md:mx-12 mt-4 mb-6 bg-[#202a2d]/95 backdrop-blur-md border border-[#202a2d]/60 shadow-2xl rounded-sm p-4 text-stone-100">
                 <div class="flex flex-col gap-2">
                     <a href="index.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Home</a>
                     <a href="services.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Services</a>
                     <a href="faq.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">FAQ</a>
+                    <a href="team.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Osteopath</a>
                     <a href="contact.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Contact</a>
-                    <div class="border-t border-white/10 pt-3 mt-2">
-                        <p class="px-4 text-xs uppercase tracking-widest text-stone-400 mb-2">Team</p>
-                        <div class="flex flex-col">
-                            <a href="arthur.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Arthur Menzies</a>
-                            <a href="cecile.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Cécile Gasparini</a>
-                            <a href="lais.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Laïs Carneiro</a>
-                            <a href="lea.html" class="px-4 py-2 text-xs uppercase tracking-widest hover:bg-stone-800/50 transition-colors">Léa Triole</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="mt-4 inline-flex items-center justify-center gap-2 bg-[#cbd0b5] text-[#202a2d] px-6 py-3 rounded-full text-xs uppercase tracking-widest font-semibold hover:bg-white transition-colors">
-                        Book Appointment <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
-                    </a>
                 </div>
             </div>
         </div>
@@ -133,28 +106,27 @@
 
     <!-- Hero Section -->
     <section class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-36 pb-12 md:pt-48 md:pb-20">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-12">
-            <div class="max-w-3xl">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-12">
+            <div class="max-w-3xl md:max-w-none md:flex-[0_0_52%] md:-translate-x-[10%]">
                 <h1 class="hero-title font-['DM_Serif_Display'] text-[#202a2d] text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8">
-                    <span id="hero-typewriter" class="hero-typewriter hero-typewriter-singleline">your body is</span> <br><span class="italic font-normal opacity-80">in good hands</span>
+                    <span id="hero-typewriter" class="hero-typewriter hero-typewriter-singleline">Osteopathy</span> <br><span class="italic font-normal opacity-80">for the whole body</span>
                 </h1>
                 <p class="hero-subtitle text-lg md:text-xl text-[#202a2d]/80 leading-relaxed max-w-2xl font-light">
-                    Expert physiotherapy in the heart of Luxembourg. Our team of dedicated physiotherapists offers personalised care to help you move better, feel stronger, and live fully.
+                    Osteopathy clinic in Luxembourg. Lucas Bey, D.O. osteopath, offers functional, visceral, structural, and cranial approaches to restore comfort and mobility.
                 </p>
             </div>
-            <div class="hero-accent hidden md:block rotate-[-6deg] translate-y-[-2rem]">
-                <p class="font-['Reenie_Beanie'] text-[#202a2d] text-4xl">book an appointment</p>
-                <i data-lucide="arrow-down-right" class="text-[#202a2d] w-8 h-8 ml-8 mt-2 stroke-[1.5]"></i>
+            <div class="flex w-full md:flex-1 justify-center md:justify-end overflow-visible">
+                <img src="assets/hero-spine.png" alt="Spine illustration" class="w-full max-w-none h-auto object-contain origin-right md:translate-x-[40%] lg:translate-x-[40%] md:scale-125 lg:scale-150 xl:scale-[1.7]">
             </div>
         </div>
     </section>
 
     <!-- Hero Image -->
     <section class="w-full px-4 md:px-12 mb-24 md:mb-32">
-        <div class="relative w-full h-[50vh] md:h-[75vh] overflow-hidden rounded-[2rem] md:rounded-[3rem]">
-            <img src="assets/hero.png" alt="{{CLINIC_NAME_UPPER}} Practice" class="absolute inset-0 w-full h-full object-cover">
+        <div class="relative w-full h-[50vh] md:h-[75vh] overflow-hidden rounded-[2rem] md:rounded-[3rem] group">
+            <img src="assets/hero-lucas-bey.jpg" alt="Osteopathy session with Lucas Bey" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out">
             <div class="absolute bottom-0 left-0 w-full p-6 md:p-12 bg-gradient-to-t from-[#202a2d]/80 to-transparent">
-                <span class="text-[#cbd0b5] font-['DM_Serif_Display'] text-3xl md:text-5xl tracking-tight">Welcome to our practice</span>
+                <span class="text-white font-['DM_Serif_Display'] text-3xl md:text-5xl tracking-tight">Welcome to the osteopathy clinic</span>
             </div>
         </div>
     </section>
@@ -173,45 +145,45 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
             <a href="services.html" class="flex flex-col gap-6 group">
                 <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1000&auto=format&fit=crop" alt="Back and Joints Rehabilitation" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1000&auto=format&fit=crop" alt="Structural osteopathy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
                 </div>
                 <div>
                     <div class="flex items-baseline justify-between mb-2">
-                        <h3 class="font-['DM_Serif_Display'] text-4xl text-[#202a2d] tracking-tight">Back & Joints</h3>
-                        <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium">Rehabilitation</span>
+                        <h3 class="font-['DM_Serif_Display'] text-4xl text-[#202a2d] tracking-tight">Structural osteopathy</h3>
+                        <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium">Structural</span>
                     </div>
                     <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
-                        Specialised rehabilitation for back pain and joint disorders. Restore your mobility and relieve chronic pain.
+                        Focused work on joints, muscles, and posture to release tension and improve mobility.
                     </p>
                 </div>
             </a>
 
             <a href="services.html" class="flex flex-col gap-6 group">
                 <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1000&auto=format&fit=crop" alt="Sports Physiotherapy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1000&auto=format&fit=crop" alt="Functional osteopathy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
                 </div>
                 <div>
                     <div class="flex items-baseline justify-between mb-2">
-                        <h3 class="font-['DM_Serif_Display'] text-4xl text-[#202a2d] tracking-tight">Sports</h3>
-                        <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium">Performance</span>
+                        <h3 class="font-['DM_Serif_Display'] text-4xl text-[#202a2d] tracking-tight">Functional osteopathy</h3>
+                        <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium">Functional</span>
                     </div>
                     <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
-                        Sports performance optimisation and post-injury recovery. Get back to your best level safely.
+                        Movement-focused approach to restore balance and everyday comfort.
                     </p>
                 </div>
             </a>
 
             <a href="services.html" class="flex flex-col gap-6 group">
                 <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1000&auto=format&fit=crop" alt="Lymphatic Drainage" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1000&auto=format&fit=crop" alt="Visceral osteopathy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
                 </div>
                 <div>
                     <div class="flex items-baseline justify-between mb-2">
-                        <h3 class="font-['DM_Serif_Display'] text-4xl text-[#202a2d] tracking-tight">Drainage</h3>
-                        <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium">Lymphatic</span>
+                        <h3 class="font-['DM_Serif_Display'] text-4xl text-[#202a2d] tracking-tight">Visceral osteopathy</h3>
+                        <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium">Visceral</span>
                     </div>
                     <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
-                        Gentle manual lymphatic drainage to reduce swelling, boost immunity, and promote healing.
+                        Gentle work on visceral tissues to support abdominal comfort and breathing.
                     </p>
                 </div>
             </a>
@@ -219,46 +191,215 @@
     </section>
 
     <!-- Team Preview -->
-    <section class="w-full max-w-7xl mx-auto px-6 md:px-12 mb-32">
+    <section class="w-full px-4 md:px-12 mb-32">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
             <div>
                 <h2 class="font-['DM_Serif_Display'] text-[#202a2d] text-5xl md:text-7xl tracking-tight leading-[0.9] mb-4">
-                    meet the <br><span class="italic font-normal opacity-80">team</span>
+                    your <br><span class="italic font-normal opacity-80">osteopath</span>
                 </h2>
                 <p class="text-lg text-[#202a2d]/80 font-light max-w-xl">
-                    Four dedicated physiotherapists speaking English, French, Spanish, and Portuguese to serve Luxembourg's diverse community.
+                    Lucas Bey, D.O. osteopath, welcomes you by appointment in Luxembourg. Consultations in French, English, and Spanish.
                 </p>
             </div>
             <a href="team.html" class="mt-6 md:mt-0 text-sm uppercase tracking-widest font-medium hover:opacity-60 transition-opacity flex items-center gap-2">
-                Full team <i data-lucide="arrow-right" class="w-4 h-4 stroke-[1.5]"></i>
+                View profile <i data-lucide="arrow-right" class="w-4 h-4 stroke-[1.5]"></i>
             </a>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <a href="arthur.html" class="flex flex-col gap-4 group">
-                <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="assets/Arthur Menzies.jpg" alt="Arthur Menzies" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
+        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-10 items-stretch w-full">
+            <div class="h-full">
+                <a href="team.html" class="group block h-full">
+                    <div class="relative h-full min-h-[520px] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
+                        <img src="assets/lucas-bey.jpg" alt="Lucas Bey" class="absolute inset-0 h-full w-full object-cover object-center">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/50 to-transparent">
+                            <h3 class="font-['DM_Serif_Display'] text-2xl text-white tracking-tight">Lucas Bey</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Reviews -->
+            <div class="rounded-[2.5rem] bg-[#202a2d] px-6 py-12 md:px-10 md:py-16 h-full flex flex-col justify-center overflow-hidden">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl sm:text-5xl font-semibold text-white tracking-tight mb-6">
+                    patient reviews
+                </h2>
+                <p class="text-lg text-white/70 max-w-2xl mx-auto">
+                    Honest feedback on the welcome, listening, and effectiveness of care.
+                </p>
+            </div>
+
+            <div class="relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#202a2d] via-[#202a2d]/80 to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#202a2d] via-[#202a2d]/80 to-transparent z-10 pointer-events-none"></div>
+
+                <div class="testimonial-row-right-to-left grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4 pb-4" style="animation: slideRightToLeft 30s linear infinite;">
+                    <div class="p-6 rounded-3xl bg-[#cbd0b5]/10 border border-[#cbd0b5]/15 backdrop-blur-xl shrink-0 max-w-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="h-10 w-10 rounded-full bg-[#cbd0b5]/20 flex items-center justify-center text-white font-semibold text-sm">
+                                ML
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white text-sm">Marie L.</p>
+                                <p class="text-xs text-white/60">Patient</p>
+                            </div>
+                        </div>
+                        <p class="text-white/80 leading-relaxed mb-4 text-sm">
+                            "Great listening and a very effective session. I felt relief the next day."
+                        </p>
+                        <div class="flex text-[#d8c9a3]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-3xl bg-[#cbd0b5]/10 border border-[#cbd0b5]/15 backdrop-blur-xl shrink-0 max-w-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="h-10 w-10 rounded-full bg-[#cbd0b5]/20 flex items-center justify-center text-white font-semibold text-sm">
+                                JR
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white text-sm">Julien R.</p>
+                                <p class="text-xs text-white/60">Patient</p>
+                            </div>
+                        </div>
+                        <p class="text-white/80 leading-relaxed mb-4 text-sm">
+                            "Professional care with clear explanations. Highly recommended."
+                        </p>
+                        <div class="flex text-[#d8c9a3]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-3xl bg-[#cbd0b5]/10 border border-[#cbd0b5]/15 backdrop-blur-xl shrink-0 max-w-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="h-10 w-10 rounded-full bg-[#cbd0b5]/20 flex items-center justify-center text-white font-semibold text-sm">
+                                SL
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white text-sm">Sophie L.</p>
+                                <p class="text-xs text-white/60">Patient</p>
+                            </div>
+                        </div>
+                        <p class="text-white/80 leading-relaxed mb-4 text-sm">
+                            "Warm welcome and a gentle session. I feel much better."
+                        </p>
+                        <div class="flex text-[#d8c9a3]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight">Arthur</h3>
-            </a>
-            <a href="cecile.html" class="flex flex-col gap-4 group">
-                <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="assets/Cecile Gasparini.jpg" alt="Cecile Gasparini" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
+
+                <div class="testimonial-row-left-to-right grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4 pb-4" style="animation: slideLeftToRight 35s linear infinite;">
+                    <div class="p-6 rounded-3xl bg-[#cbd0b5]/10 border border-[#cbd0b5]/15 backdrop-blur-xl shrink-0 max-w-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="h-10 w-10 rounded-full bg-[#cbd0b5]/20 flex items-center justify-center text-white font-semibold text-sm">
+                                CB
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white text-sm">Clara B.</p>
+                                <p class="text-xs text-white/60">Patient</p>
+                            </div>
+                        </div>
+                        <p class="text-white/80 leading-relaxed mb-4 text-sm">
+                            "Great follow-up and useful advice. Clear improvement after two sessions."
+                        </p>
+                        <div class="flex text-[#d8c9a3]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-3xl bg-[#cbd0b5]/10 border border-[#cbd0b5]/15 backdrop-blur-xl shrink-0 max-w-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="h-10 w-10 rounded-full bg-[#cbd0b5]/20 flex items-center justify-center text-white font-semibold text-sm">
+                                AM
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white text-sm">Antoine M.</p>
+                                <p class="text-xs text-white/60">Patient</p>
+                            </div>
+                        </div>
+                        <p class="text-white/80 leading-relaxed mb-4 text-sm">
+                            "Thorough assessment and tailored treatment. Very reassuring."
+                        </p>
+                        <div class="flex text-[#d8c9a3]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-3xl bg-[#cbd0b5]/10 border border-[#cbd0b5]/15 backdrop-blur-xl shrink-0 max-w-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="h-10 w-10 rounded-full bg-[#cbd0b5]/20 flex items-center justify-center text-white font-semibold text-sm">
+                                NL
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white text-sm">Nora L.</p>
+                                <p class="text-xs text-white/60">Patient</p>
+                            </div>
+                        </div>
+                        <p class="text-white/80 leading-relaxed mb-4 text-sm">
+                            "Very attentive practitioner. I recommend for back pain."
+                        </p>
+                        <div class="flex text-[#d8c9a3]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="h-3 w-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight">Cecile</h3>
-            </a>
-            <a href="lais.html" class="flex flex-col gap-4 group">
-                <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="assets/Lais Carneiro.jpg" alt="Lais Carneiro" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
-                </div>
-                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight">Lais</h3>
-            </a>
-            <a href="lea.html" class="flex flex-col gap-4 group">
-                <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="assets/Léa Triole.jpg" alt="Lea Triole" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
-                </div>
-                <h3 class="font-['DM_Serif_Display'] text-2xl text-[#202a2d] tracking-tight">Lea</h3>
-            </a>
+            </div>
+
+            <style>
+                @keyframes slideRightToLeft {
+                    0% { transform: translateX(100%); }
+                    100% { transform: translateX(-100%); }
+                }
+
+                @keyframes slideLeftToRight {
+                    0% { transform: translateX(-100%); }
+                    100% { transform: translateX(100%); }
+                }
+
+                .testimonial-row-right-to-left {
+                    display: flex;
+                    width: fit-content;
+                    gap: 1.5rem;
+                }
+
+                .testimonial-row-left-to-right {
+                    display: flex;
+                    width: fit-content;
+                    gap: 1.5rem;
+                    animation-direction: reverse;
+                }
+
+                .testimonial-row-right-to-left:hover,
+                .testimonial-row-left-to-right:hover {
+                    animation-play-state: paused;
+                }
+            </style>
+            </div>
         </div>
     </section>
 
@@ -266,126 +407,42 @@
     <section class="w-full px-4 md:px-12 mb-24">
         <div class="relative w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-[#202a2d] p-8 md:p-16 flex flex-col md:flex-row gap-12 items-center">
             <div class="flex-1">
-                <h2 class="font-['DM_Serif_Display'] text-[#cbd0b5] text-4xl md:text-6xl tracking-tight leading-[0.9] mb-6">
+                <h2 class="font-['DM_Serif_Display'] text-white text-4xl md:text-6xl tracking-tight leading-[0.9] mb-6">
                     visit our <br><span class="italic font-normal opacity-80">practice</span>
                 </h2>
-                <div class="text-[#cbd0b5]/80 font-light space-y-3 mb-8">
+                <div class="text-white/80 font-light space-y-3 mb-8">
                     <p class="flex items-center gap-3"><i data-lucide="map-pin" class="w-5 h-5 stroke-[1.5]"></i> {{ADDRESS_INLINE}}</p>
                     <p class="flex items-center gap-3"><i data-lucide="phone" class="w-5 h-5 stroke-[1.5]"></i> {{PHONE_DISPLAY}}</p>
-                    <p class="flex items-center gap-3"><i data-lucide="clock" class="w-5 h-5 stroke-[1.5]"></i> Monday - Friday: 08:00 - 19:00</p>
+                    <p class="flex items-center gap-3"><i data-lucide="clock" class="w-5 h-5 stroke-[1.5]"></i> By appointment only</p>
                 </div>
                 <a href="contact.html" class="inline-flex items-center gap-3 bg-[#cbd0b5] text-[#202a2d] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-white transition-colors">
                     Book Appointment <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
                 </a>
             </div>
             <div class="flex-1 w-full aspect-square md:aspect-[4/3] rounded-[2rem] overflow-hidden">
-                <img src="../assets/salle.png" alt="{{CLINIC_NAME_UPPER}} Practice" class="w-full h-full object-cover">
+                <img src="../assets/cabinet.jpg" alt="Lucas Bey Osteopathy Clinic" class="w-full h-full object-cover">
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="w-full px-6 md:px-12 py-16 bg-[#202a2d] text-[#cbd0b5]">
+    <footer class="w-full px-6 md:px-12 py-16 bg-[#202a2d] text-white">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <a href="index.html" class="flex items-center gap-3">
-                    <img src="assets/logo.png" alt="LËTZ PHYSIO" class="h-10 rounded-full">
+                    <img src="assets/logo.svg" alt="{{CLINIC_NAME}}" class="h-10 rounded-full">
                     <span class="font-['DM_Serif_Display'] text-3xl">{{CLINIC_NAME}}</span>
                 </a>
                 <div class="flex gap-8 text-sm font-light">
                     <a href="services.html" class="hover:text-white transition-colors">Services</a>
-                    <a href="team.html" class="hover:text-white transition-colors">Team</a>
+                    <a href="team.html" class="hover:text-white transition-colors">Osteopath</a>
                     <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
                     <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
                 </div>
-                <p class="text-xs opacity-60 uppercase tracking-widest">&copy; 2024 LËTZ PHYSIO</p>
+                <p class="text-xs opacity-60 uppercase tracking-widest">&copy; 2026 {{CLINIC_NAME}}</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        (function() {
-            const elementId = "hero-typewriter";
-            const typeSpeed = 100;
-            const deleteSpeed = 50;
-            const pauseTime = 2000;
-
-            let charIndex = 0;
-            let isDeleting = false;
-            const element = document.getElementById(elementId);
-            const text = element ? element.textContent.trim() : "";
-
-            function type() {
-                if (!element) {
-                    return;
-                }
-
-                if (isDeleting) {
-                    element.textContent = text.substring(0, charIndex - 1);
-                    charIndex--;
-                } else {
-                    element.textContent = text.substring(0, charIndex + 1);
-                    charIndex++;
-                }
-
-                let currentSpeed = isDeleting ? deleteSpeed : typeSpeed;
-
-                if (!isDeleting && charIndex === text.length) {
-                    currentSpeed = pauseTime;
-                    isDeleting = true;
-                } else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    currentSpeed = 400;
-                }
-
-                setTimeout(type, currentSpeed);
-            }
-
-            if (element) {
-                element.textContent = "";
-                type();
-            } else {
-                console.error("No se encontró el elemento con ID: " + elementId);
-            }
-        })();
-    </script>
-    <script>
-        (function() {
-            const menuToggle = document.getElementById("mobile-menu-toggle");
-            const langToggle = document.getElementById("mobile-lang-toggle");
-            const menuPanel = document.getElementById("mobile-menu");
-            const langPanel = document.getElementById("mobile-lang");
-
-            function closePanel(panel) {
-                if (panel && !panel.classList.contains("hidden")) {
-                    panel.classList.add("hidden");
-                }
-            }
-
-            menuToggle && menuToggle.addEventListener("click", function() {
-                if (!menuPanel) return;
-                menuPanel.classList.toggle("hidden");
-                closePanel(langPanel);
-            });
-
-            langToggle && langToggle.addEventListener("click", function() {
-                if (!langPanel) return;
-                langPanel.classList.toggle("hidden");
-                closePanel(menuPanel);
-            });
-
-            document.addEventListener("click", function(event) {
-                const target = event.target;
-                const isToggle = menuToggle && menuToggle.contains(target) || langToggle && langToggle.contains(target);
-                const isPanel = menuPanel && menuPanel.contains(target) || langPanel && langPanel.contains(target);
-                if (!isToggle && !isPanel) {
-                    closePanel(menuPanel);
-                    closePanel(langPanel);
-                }
-            });
-        })();
-    </script>
-    <script>lucide.createIcons();</script>
-    <script src="https://app.contactbutton.com/script/f9179d71a69db1d708e6c0da599ed485" async="async"></script>
+    <script type="module" src="/bg-entry.tsx"></script>
 </body>
 </html>
