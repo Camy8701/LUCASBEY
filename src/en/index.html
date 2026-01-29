@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{CLINIC_NAME}} - Osteopathy in Luxembourg</title>
+    <title>Osteopathy Clinic Mr Lucas Bey - Osteopathy in Luxembourg</title>
     
     <link rel="stylesheet" href="/styles.css">
 <script src="https://unpkg.com/lucide@latest"></script>
@@ -46,8 +46,8 @@
 <!-- Navigation -->
     <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/55 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between relative">
         <a href="index.html" class="flex items-center gap-2 sm:gap-3 select-none cursor-pointer group min-w-0">
-            <img src="assets/logo.svg" alt="{{CLINIC_NAME}}" class="h-12 w-12 sm:h-[70px] sm:w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
-            <span class="font-['DM_Serif_Display'] text-base sm:text-xl md:text-2xl text-white tracking-tight leading-none truncate max-w-[140px] sm:max-w-none">{{CLINIC_NAME}}</span>
+            <img src="assets/logo.svg" alt="Osteopathy Clinic Mr Lucas Bey" class="h-12 w-12 sm:h-[70px] sm:w-[70px] md:h-[88px] md:w-[88px] object-contain rounded-full drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]">
+            <span class="font-['DM_Serif_Display'] text-base sm:text-xl md:text-2xl text-white tracking-tight leading-none truncate max-w-[140px] sm:max-w-none">Osteopathy Clinic Mr Lucas Bey</span>
         </a>
 
         <nav class="hidden lg:flex text-sm font-light text-stone-100 tracking-wide gap-x-3 gap-y-3 items-center">
@@ -142,52 +142,7 @@
             </a>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-            <a href="services.html" class="flex flex-col gap-6 group">
-                <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1000&auto=format&fit=crop" alt="Structural osteopathy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
-                </div>
-                <div>
-                    <div class="flex items-baseline justify-between mb-2">
-                        <h3 class="font-['DM_Serif_Display'] text-4xl text-[#202a2d] tracking-tight">Structural osteopathy</h3>
-                        <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium">Structural</span>
-                    </div>
-                    <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
-                        Focused work on joints, muscles, and posture to release tension and improve mobility.
-                    </p>
-                </div>
-            </a>
-
-            <a href="services.html" class="flex flex-col gap-6 group">
-                <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1000&auto=format&fit=crop" alt="Functional osteopathy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
-                </div>
-                <div>
-                    <div class="flex items-baseline justify-between mb-2">
-                        <h3 class="font-['DM_Serif_Display'] text-4xl text-[#202a2d] tracking-tight">Functional osteopathy</h3>
-                        <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium">Functional</span>
-                    </div>
-                    <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
-                        Movement-focused approach to restore balance and everyday comfort.
-                    </p>
-                </div>
-            </a>
-
-            <a href="services.html" class="flex flex-col gap-6 group">
-                <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#202a2d]/5">
-                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1000&auto=format&fit=crop" alt="Visceral osteopathy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:mix-blend-normal">
-                </div>
-                <div>
-                    <div class="flex items-baseline justify-between mb-2">
-                        <h3 class="font-['DM_Serif_Display'] text-4xl text-[#202a2d] tracking-tight">Visceral osteopathy</h3>
-                        <span class="text-xs uppercase tracking-widest text-[#202a2d]/70 font-medium">Visceral</span>
-                    </div>
-                    <p class="text-lg text-[#202a2d]/80 leading-relaxed font-light">
-                        Gentle work on visceral tissues to support abdominal comfort and breathing.
-                    </p>
-                </div>
-            </a>
-        </div>
+        <div id="expertise-stack" data-locale="en" class="w-full"></div>
     </section>
 
     <!-- Team Preview -->
@@ -430,8 +385,8 @@
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <a href="index.html" class="flex items-center gap-3">
-                    <img src="assets/logo.svg" alt="{{CLINIC_NAME}}" class="h-10 rounded-full">
-                    <span class="font-['DM_Serif_Display'] text-3xl">{{CLINIC_NAME}}</span>
+                    <img src="assets/logo.svg" alt="Osteopathy Clinic Mr Lucas Bey" class="h-10 rounded-full">
+                    <span class="font-['DM_Serif_Display'] text-3xl">Osteopathy Clinic Mr Lucas Bey</span>
                 </a>
                 <div class="flex gap-8 text-sm font-light">
                     <a href="services.html" class="hover:text-white transition-colors">Services</a>
@@ -439,10 +394,11 @@
                     <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
                     <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
                 </div>
-                <p class="text-xs opacity-60 uppercase tracking-widest">&copy; 2026 {{CLINIC_NAME}}</p>
+                <p class="text-xs opacity-60 uppercase tracking-widest">&copy; 2026 Osteopathy Clinic Mr Lucas Bey</p>
             </div>
         </div>
     </footer>
+    <script type="module" src="/expertise-entry.tsx"></script>
     <script type="module" src="/bg-entry.tsx"></script>
 </body>
 </html>

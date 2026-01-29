@@ -6,8 +6,8 @@
     </linearGradient>
   </defs>
   <rect width="512" height="512" rx="256" fill="url(#bg)" />
-  <g fill="#cbd0b5" font-family="'DM Serif Display', 'Times New Roman', serif" text-anchor="middle">
-    <text x="256" y="248" font-size="64" letter-spacing="1">Lucas Bey</text>
-    <text x="256" y="304" font-size="22" font-family="'IBM Plex Sans', Arial, sans-serif" letter-spacing="2">OSTEOPATHE D.O.</text>
+  <g fill="#ffffff" font-family="'DM Serif Display', 'Times New Roman', serif" text-anchor="middle">
+    <text x="256" y="248" font-size="74" letter-spacing="1">Lucas Bey</text>
+    <text x="256" y="304" font-size="25" font-family="'IBM Plex Sans', Arial, sans-serif" letter-spacing="2">OSTEOPATHE D.O.</text>
   </g>
 </svg>
