@@ -42,7 +42,6 @@
     </style>
 </head>
 <body class="text-[#202a2d] font-['IBM_Plex_Sans'] antialiased selection:bg-[#202a2d] selection:text-white relative">
-    <div id="bg-root"></div>
 <!-- Navigation -->
     <header class="fixed z-50 flex md:px-12 lg:px-20 xl:px-24 transition-all duration-300 backdrop-blur-[2px] bg-gradient-to-b from-[#202a2d]/55 to-transparent w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between relative">
         <a href="index.html" class="flex items-center gap-2 sm:gap-3 select-none cursor-pointer group min-w-0">
@@ -188,7 +187,7 @@
                 <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#202a2d] via-[#202a2d]/80 to-transparent z-10 pointer-events-none"></div>
                 <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#202a2d] via-[#202a2d]/80 to-transparent z-10 pointer-events-none"></div>
 
-                <div class="testimonial-row-right-to-left grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4 pb-4" style="animation: slideRightToLeft 30s linear infinite;">
+                <div class="testimonial-row-right-to-left grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4 pb-4" data-testimonial-row="true" style="animation: scrollLeft 30s linear infinite;">
                     <div class="p-6 rounded-3xl bg-[#cbd0b5]/10 border border-[#cbd0b5]/15 backdrop-blur-xl shrink-0 max-w-sm">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="h-10 w-10 rounded-full bg-[#cbd0b5]/20 flex items-center justify-center text-white font-semibold text-sm">
@@ -256,7 +255,7 @@
                     </div>
                 </div>
 
-                <div class="testimonial-row-left-to-right grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4 pb-4" style="animation: slideLeftToRight 35s linear infinite;">
+                <div class="testimonial-row-left-to-right grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4 pb-4" data-testimonial-row="true" style="animation: scrollRight 35s linear infinite;">
                     <div class="p-6 rounded-3xl bg-[#cbd0b5]/10 border border-[#cbd0b5]/15 backdrop-blur-xl shrink-0 max-w-sm">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="h-10 w-10 rounded-full bg-[#cbd0b5]/20 flex items-center justify-center text-white font-semibold text-sm">
@@ -326,12 +325,12 @@
             </div>
 
             <style>
-                @keyframes slideRightToLeft {
+                @keyframes scrollLeft {
                     0% { transform: translateX(100%); }
                     100% { transform: translateX(-100%); }
                 }
 
-                @keyframes slideLeftToRight {
+                @keyframes scrollRight {
                     0% { transform: translateX(-100%); }
                     100% { transform: translateX(100%); }
                 }
@@ -340,13 +339,14 @@
                     display: flex;
                     width: fit-content;
                     gap: 1.5rem;
+                    will-change: transform;
                 }
 
                 .testimonial-row-left-to-right {
                     display: flex;
                     width: fit-content;
                     gap: 1.5rem;
-                    animation-direction: reverse;
+                    will-change: transform;
                 }
 
                 .testimonial-row-right-to-left:hover,
@@ -373,6 +373,11 @@
                 <a href="contact.html" class="inline-flex items-center gap-3 bg-[#cbd0b5] text-[#202a2d] px-8 py-4 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-white transition-colors">
                     Book Appointment <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
                 </a>
+                <div class="mt-12">
+                    <a href="https://www.facebook.com/profile.php?id=100087217012645" target="_blank" rel="noopener" aria-label="Facebook" class="inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/20 text-white/80 hover:text-white hover:border-white transition-colors">
+                        <svg viewBox="0 0 24 24" class="h-7 w-7" fill="currentColor" aria-hidden="true"><path d="M13.5 9H16V6h-2.5C11.6 6 10 7.6 10 9.5V11H8v3h2v6h3v-6h2.5l.5-3H13v-1.5c0-.3.2-.5.5-.5z"/></svg>
+                    </a>
+                </div>
             </div>
             <div class="flex-1 w-full aspect-square md:aspect-[4/3] rounded-[2rem] overflow-hidden">
                 <img src="../assets/cabinet.jpg" alt="Lucas Bey Osteopathy Clinic" class="w-full h-full object-cover">
@@ -399,6 +404,6 @@
         </div>
     </footer>
     <script type="module" src="/expertise-entry.tsx"></script>
-    <script type="module" src="/bg-entry.tsx"></script>
+        <script src="/testimonials.js" defer></script>
 </body>
 </html>
